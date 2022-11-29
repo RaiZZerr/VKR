@@ -42,4 +42,5 @@ int main()
 	mt19937 gen(rd());
 	uniform_real_distribution<> dist(1, 10);
 	cout << dist(gen);
+	return 1;
 }
