@@ -2,6 +2,7 @@
 #include <iostream>
 #include <ctime>
 #include <random>
+#include "Classes.h"
 
 using namespace std;
 
@@ -38,9 +39,10 @@ void see() {
 
 int main()
 {
-	random_device rd;
-	mt19937 gen(rd());
-	uniform_real_distribution<> dist(1, 10);
-	cout << dist(gen);
-	return 1;
+	Cylinder num;
+	num.CreateCylinder();
+	for (int i = 0; i < num.x.size(); i++) {
+		cout << num.x[i] << " , " << num.z[i] << "  ";
+	}
+	return 0;
 }
