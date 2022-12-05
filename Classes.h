@@ -1,6 +1,7 @@
 
 #include <vector>
 #include <random>
+#include <fstream>
 
 using namespace std;
 
@@ -49,9 +50,9 @@ void Cylinder::CreateCylinder()
 	// x = r*cos(fi), y = r * sin(fi)
  
 	// Генерация основания и вершины цилиндра
-	for (float hlp_r = r; hlp_r > 0; hlp_r -= 10)  // изменение радиуса круга для заполнения основания
+	for (float hlp_r = r; hlp_r > 0; hlp_r -= 2)  // изменение радиуса круга для заполнения основания
 	{
-		for (int i = 0; i <= 360; i += 20)
+		for (int i = 0; i <= 360; i += 5)
 		{
 			x.push_back(hlp_r* cos(i));
 			y.push_back(0);
@@ -60,9 +61,9 @@ void Cylinder::CreateCylinder()
 		}
 	}
 
-	for (float hlp_r = r; hlp_r > 0; hlp_r -= 10)  // изменение радиуса круга для заполнения вершины
+	for (float hlp_r = r; hlp_r > 0; hlp_r -= 2)  // изменение радиуса круга для заполнения вершины
 	{
-		for (int i = 0; i <= 360; i += 20)
+		for (int i = 0; i <= 360; i += 5)
 		{
 			x.push_back(hlp_r * cos(i));
 			y.push_back(h);
@@ -77,10 +78,10 @@ void Cylinder::CreateCylinder()
 	float k = 0;
 	while (hlp_y < h)
 	{
-		uniform_real_distribution<> dist(5, 10);
+		uniform_real_distribution<> dist(2, 4);
 		k = dist(gen);
 		hlp_y += k;
-		for (int i = 0; i <= 360; i += 20)
+		for (int i = 0; i <= 360; i += 5)
 		{
 			x.push_back(r * cos(i));
 			y.push_back(hlp_y);
@@ -97,7 +98,7 @@ void Sphere::CreateSphere()
 	r = dist(gen);
 
 	// Генерация образующей окружности сферы
-	for (int i = 0; i <= 360; i += 20)
+	for (int i = 0; i <= 360; i += 2)
 	{
 		x.push_back(r * cos(i));
 		y.push_back(0);
@@ -111,9 +112,9 @@ void Sphere::CreateSphere()
 	while (hlp_y < r)
 	{
 		uniform_real_distribution<> dist(5, 10);
-		hlp_y += dist(gen);
+		hlp_y += 2;
 		hlp_r = sqrt(r * r - hlp_y * hlp_y);
-		for (int i = 0; i <= 360; i += 20)
+		for (int i = 0; i <= 360; i += 2)
 		{
 			x.push_back(hlp_r * cos(i));
 			y.push_back(hlp_y);
@@ -143,7 +144,26 @@ void Sphere::CreateSphere()
 
 void Cylinder::GetCSV()
 {
+	ofstream CSV;
+	CSV.open("Example1.csv");
+	CSV << "X;Y;Z" << endl;
+	for (int i = 0; i < x.size(); i++)
+	{
+		CSV << x[i] << ';' << y[i] << ';' << z[i] << endl;
+	}
+	CSV.close();
+}
 
+void Sphere::GetCSV()
+{
+	ofstream CSV;
+	CSV.open("Example2.csv");
+	CSV << "X;Y;Z" << endl;
+	for (int i = 0; i < x.size(); i++)
+	{
+		CSV << x[i] << ';' << y[i] << ';' << z[i] << endl;
+	}
+	CSV.close();
 }
 
 void Surface::GetCSV()
