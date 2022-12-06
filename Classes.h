@@ -4,12 +4,11 @@
 #include <fstream>
 
 using namespace std;
-
+class Point { double x, y, z; };
 class Figure {
 	public:
-		vector <float> x;
-		vector <float> y;
-		vector <float> z;
+		vector <Point> x;
+		
 };
 
 class Cylinder: public Figure {
