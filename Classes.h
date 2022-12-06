@@ -11,7 +11,7 @@ class Cylinder {
 		vector <float> x;
 		vector <float> y;
 		vector <float> z;
-		void CreateCylinder();
+		int CreateCylinder();
 		void GetCSV();
 };
 
@@ -22,7 +22,6 @@ class Surface {
 		vector <float> z;
 		void CreateSurface();
 		void GetCSV();
-
 };
 
 class Sphere {
@@ -31,7 +30,7 @@ class Sphere {
 		vector <float> x;
 		vector <float> y;
 		vector <float> z;
-		void CreateSphere();
+		int CreateSphere();
 		void GetCSV();
 };
 
@@ -40,8 +39,9 @@ void Surface::CreateSurface()
 
 }
 
-void Cylinder::CreateCylinder()
+int Cylinder::CreateCylinder()
 {
+	static int ID = 0;
 	random_device rd;
 	mt19937 gen(rd());
 	uniform_real_distribution<> dist(5, 100);
@@ -88,10 +88,13 @@ void Cylinder::CreateCylinder()
 			z.push_back(r * sin(i));
 		}		
 	}
+	ID++;
+	return ID;
 }
 
-void Sphere::CreateSphere()
+int Sphere::CreateSphere()
 {
+	static int ID = 0;
 	random_device rd;
 	mt19937 gen(rd());
 	uniform_real_distribution<> dist(5, 100);
@@ -140,28 +143,31 @@ void Sphere::CreateSphere()
 	}
 	//----------------------------------------
 
+	ID++;
+	return ID;
 }
 
 void Cylinder::GetCSV()
 {
+	int ID = Cylinder::CreateCylinder();
 	ofstream CSV;
-	CSV.open("Example1.csv");
-	CSV << "X;Y;Z" << endl;
+	CSV.open("Example.csv", ios_base::app);
 	for (int i = 0; i < x.size(); i++)
 	{
-		CSV << x[i] << ';' << y[i] << ';' << z[i] << endl;
+		CSV << "1;" << ID << ';' << x[i] << ';' << y[i] << ';' << z[i] << endl;
 	}
 	CSV.close();
 }
 
 void Sphere::GetCSV()
+
 {
+	int ID = Sphere::CreateSphere();
 	ofstream CSV;
-	CSV.open("Example2.csv");
-	CSV << "X;Y;Z" << endl;
+	CSV.open("Example.csv", ios_base::app);
 	for (int i = 0; i < x.size(); i++)
 	{
-		CSV << x[i] << ';' << y[i] << ';' << z[i] << endl;
+		CSV << "2;" << ID << ';' << x[i] << ';' << y[i] << ';' << z[i] << endl;
 	}
 	CSV.close();
 }

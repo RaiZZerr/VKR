@@ -8,15 +8,16 @@ using namespace std;
 
 int main()
 {
-	Cylinder num;
-	num.CreateCylinder();
-	num.GetCSV();
-	Sphere cum;
-	cum.CreateSphere();
-	cum.GetCSV();
-	//
+	Cylinder Cyl;
+	Cyl.GetCSV();
+	Cyl.GetCSV();
+	Cyl.GetCSV();
+	Sphere Sph;
+	Sph.GetCSV();
+	Sph.GetCSV();
+	Sph.GetCSV();
 
-	/*
+/*
 	cout << "Cylinder: " << endl;
 	for (int i = 0; i < num.x.size(); i++) {
 		cout << num.x[i] << " " << num.y[i] << " " << num.z[i] << " ";
@@ -27,6 +28,5 @@ int main()
 		cout << cum.x[j] << " " << cum.y[j] << " " << cum.z[j] << " ";
 	}
 	*/
-
 	return 0;
 }
