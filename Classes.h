@@ -5,38 +5,39 @@
 
 using namespace std;
 
-class Cylinder {
+class Figure {
 	public:
-		float r, h;
 		vector <float> x;
 		vector <float> y;
 		vector <float> z;
+};
+
+class Cylinder: public Figure {
+	public:
+		float r, h;
 		int CreateCylinder();
 		void GetCSV();
 };
 
-class Surface {
+class Surface: public Figure {
 	public:
-		vector <float> x;
-		vector <float> y;
-		vector <float> z;
-		void CreateSurface();
+		int CreateSurface();
 		void GetCSV();
 };
 
-class Sphere {
+class Sphere: public Figure {
 	public:
 		float r;
-		vector <float> x;
-		vector <float> y;
-		vector <float> z;
 		int CreateSphere();
 		void GetCSV();
 };
 
-void Surface::CreateSurface()
+int Surface::CreateSurface()
 {
+	static int ID = 0;
 
+	ID++;
+	return ID;
 }
 
 int Cylinder::CreateCylinder()
@@ -151,6 +152,13 @@ void Cylinder::GetCSV()
 {
 	int ID = Cylinder::CreateCylinder();
 	ofstream CSV;
+	ifstream check("Example.csv");
+	if (!check.is_open())
+	{
+		CSV.open("Example.csv");
+		CSV << "Type;ID;X;Y;Z" << endl;
+		CSV.close();
+	}
 	CSV.open("Example.csv", ios_base::app);
 	for (int i = 0; i < x.size(); i++)
 	{
@@ -164,6 +172,13 @@ void Sphere::GetCSV()
 {
 	int ID = Sphere::CreateSphere();
 	ofstream CSV;
+	ifstream check("Example.csv");
+	if (!check.is_open())
+	{
+		CSV.open("Example.csv");
+		CSV << "Type;ID;X;Y;Z" << endl;
+		CSV.close();
+	}
 	CSV.open("Example.csv", ios_base::app);
 	for (int i = 0; i < x.size(); i++)
 	{
