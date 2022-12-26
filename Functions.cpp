@@ -39,7 +39,8 @@ int Sphere::CreateSphere()
 	crd.y = 0;
 	crd.z = 0;
 	static int ID = 0;
-	r = GetRandNumb(5, 100);
+	//r = GetRandNumb(5, 100);
+	r = 65.65423;
 
 	// Генерация образующей окружности сферы
 	for (int i = 0; i <= 360; i += 2)
@@ -56,9 +57,13 @@ int Sphere::CreateSphere()
 	float hlp_r = 0;
 	while (hlp_y < r)
 	{
+		if (hlp_y + 2 > r)
+		{
+			break;
+		}
 		hlp_y += GetRandNumb(2, 3);
 		hlp_r = sqrt(r * r - hlp_y * hlp_y);
-		for (int i = 0; i <= 360; i += 2)
+		for (int i = 0; i <= 360; i += GetRandNumb(1, 10))
 		{
 			crd.x = hlp_r * cos(i);
 			crd.y = hlp_y;
@@ -73,9 +78,13 @@ int Sphere::CreateSphere()
 	hlp_r = 0;
 	while ((-hlp_y) < r)
 	{
+		if (-(hlp_y - 2) > r)
+		{
+			break;
+		}
 		hlp_y -= GetRandNumb(2, 3);
 		hlp_r = sqrt(r * r - ((-hlp_y) * (-hlp_y)));
-		for (int i = 0; i <= 360; i += 20)
+		for (int i = 0; i <= 360; i += GetRandNumb(1, 10))
 		{
 			crd.x = hlp_r * cos(i);
 			crd.y = hlp_y;
