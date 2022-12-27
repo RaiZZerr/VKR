@@ -9,7 +9,8 @@ using namespace std;
 int main()
 {
 	Cylinder Cyl;
-	//Cyl.GetCSV();
+	Figure* f = new Cylinder();
+	Cyl.GetCSV();
 	//Cyl.GetCSV();
 	//Cyl.GetCSV();
 	Sphere Sph;

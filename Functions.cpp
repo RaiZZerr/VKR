@@ -27,6 +27,7 @@ int Cylinder::CreateCylinder()
 	// Генерация стенок цилиндра
 	CreateWalls(crd, r, h);
 
+	f.push_back(p);
 	ID++;
 	return ID;
 }
@@ -39,8 +40,7 @@ int Sphere::CreateSphere()
 	crd.y = 0;
 	crd.z = 0;
 	static int ID = 0;
-	//r = GetRandNumb(5, 100);
-	r = 65.65423;
+	r = GetRandNumb(5, 100);
 
 	// Генерация образующей окружности сферы
 	for (int i = 0; i <= 360; i += 2)
@@ -94,12 +94,13 @@ int Sphere::CreateSphere()
 	}
 	//----------------------------------------
 
+	f.push_back(p);
 	ID++;
 	return ID;
 }
 
 // Запись точек цилиндра в CSV
-void Cylinder::GetCSV()
+/*void Cylinder::GetCSV()
 {
 	int ID = Cylinder::CreateCylinder();
 	ofstream CSV;
@@ -117,9 +118,27 @@ void Cylinder::GetCSV()
 	}
 	CSV.close();
 }
+*/
+void Figure::GetCSV()
+{
+	ofstream CSV;
+	ifstream check("Example.csv");
+	if (!check.is_open())
+	{
+		CSV.open("Example.csv");
+		CSV << "Type;ID;X;Y;Z" << endl;
+		CSV.close();
+	}
+	CSV.open("Example.csv", ios_base::app);
+	for (int i = 0; i < p.size(); i++)
+	{
+		CSV <<  << endl;
+	}
+	CSV.close();
+}
 
 // Запись точек сферы в CSV
-void Sphere::GetCSV()
+/*void Sphere::GetCSV()
 
 {
 	int ID = Sphere::CreateSphere();
@@ -138,6 +157,7 @@ void Sphere::GetCSV()
 	}
 	CSV.close();
 }
+*/
 
 // Запись точек поверхности в CSV
 void Surface::GetCSV()

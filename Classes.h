@@ -15,13 +15,17 @@ class Point {
 class Figure {
 	public:
 		vector <Point> p;
+		vector <vector <Point>> f;
 		double GetRandNumb(int min, int max); // Функция генерации рандомного числа в диапазоне от min до max
+		void GetCSV();
 };
 
 // Класс, описывающий цилиндр
 class Cylinder: public Figure {
 	public:
 		double r, h;
+		Cylinder();
+		Cylinder(double r, double h);
 		void CreateFooting(Point crd, double r, double h);
 		void CreateWalls(Point crd, double r, double h);
 		int CreateCylinder();
@@ -39,6 +43,8 @@ class Surface: public Figure {
 class Sphere: public Figure {
 	public:
 		double r;
+		Sphere();
+		Sphere(double r);
 		void CreateFooting(Point crd, double r);
 		void CreateUpHemisphere(Point crd, double r);
 		void CreateDownHemisphere(Point crd, double r);
