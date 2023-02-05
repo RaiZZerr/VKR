@@ -17,7 +17,8 @@ class Figure {
 		vector <Point> p;
 		vector <vector <Point>> f;
 		double GetRandNumb(int min, int max); // Функция генерации рандомного числа в диапазоне от min до max
-		void GetCSV();
+		virtual void GetAsCSV();
+		size_t& Number() { static size_t c = 0; return c; }
 };
 
 // Класс, описывающий цилиндр
@@ -26,10 +27,12 @@ class Cylinder: public Figure {
 		double r, h;
 		Cylinder();
 		Cylinder(double r, double h);
-		void CreateFooting(Point crd, double r, double h);
-		void CreateWalls(Point crd, double r, double h);
-		int CreateCylinder();
-		void GetCSV();
+		void CreateFooting(double r, double h);
+		void CreateWalls(double r, double h);
+		void GetAsCSV() override;
+private:
+	size_t& ID() { static size_t c = 0; return c; }
+	
 };
 
 // Класс, описывающий поверхность
@@ -45,11 +48,12 @@ class Sphere: public Figure {
 		double r;
 		Sphere();
 		Sphere(double r);
-		void CreateFooting(Point crd, double r);
-		void CreateUpHemisphere(Point crd, double r);
-		void CreateDownHemisphere(Point crd, double r);
-		int CreateSphere();
-		void GetCSV();
+		void CreateFooting(double r);
+		void CreateUpHemisphere(double r);
+		void CreateDownHemisphere(double r);
+		void GetAsCSV() override;
+private:
+	size_t& ID() { static size_t c = 0; return c; }
 };
 
 

@@ -8,15 +8,14 @@ using namespace std;
 
 int main()
 {
-	Cylinder Cyl;
-	Figure* f = new Cylinder();
-	Cyl.GetCSV();
-	//Cyl.GetCSV();
-	//Cyl.GetCSV();
-	Sphere Sph;
-	Sph.GetCSV();
-	//Sph.GetCSV();
-	//Sph.GetCSV();
+	Sphere Sph = Sphere();
+	Cylinder Cyl = Cylinder();
+	Cyl.GetAsCSV();
+	Sph.GetAsCSV();
+	Cyl = Cylinder();
+	Sph = Sphere();
+	Cyl.GetAsCSV();
+	Sph.GetAsCSV();
 
 	return 0;
 }

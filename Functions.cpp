@@ -10,156 +10,124 @@ int Surface::CreateSurface()
 	return ID;
 }
 
-// Генерация точек цилиндра
-int Cylinder::CreateCylinder()
+// Конструткор рандомного цилиндра
+Cylinder::Cylinder()
 {
-	Point crd;
-	crd.x = 0;
-	crd.y = 0;
-	crd.z = 0;
-	static int ID = 0;
+	
 	h = GetRandNumb(5, 100);
 	r = GetRandNumb(5, 100);
-
 	// Генерация основания и вершины цилиндра
-	CreateFooting(crd, r, h);
+	CreateFooting(r, h);
 
 	// Генерация стенок цилиндра
-	CreateWalls(crd, r, h);
-
-	f.push_back(p);
-	ID++;
-	return ID;
+	CreateWalls(r, h);
+	++ID();
 }
 
-// Генерация точек сферы
-int Sphere::CreateSphere()
+// Конструктор цилиндра с заданным радиусом и высотой
+Cylinder::Cylinder(double r, double h)
 {
-	Point crd;
-	crd.x = 0;
-	crd.y = 0;
-	crd.z = 0;
-	static int ID = 0;
-	r = GetRandNumb(5, 100);
+	// Генерация основания и вершины цилиндра
+	CreateFooting(r, h);
 
+	// Генерация стенок цилиндра
+	CreateWalls(r, h);
+	++ID();
+}
+
+// Конструктор рандомной сферы
+Sphere::Sphere()
+{
+	
+	r = GetRandNumb(5, 100);
 	// Генерация образующей окружности сферы
-	for (int i = 0; i <= 360; i += 2)
-	{
-		crd.x = r * cos(i);
-		crd.y = 0;
-		crd.z = r * sin(i);
-		p.push_back(crd);
-	}
-	//--------------------------------------
+	CreateFooting(r);
 
 	// Генерация верхней полусферы
-	float hlp_y = 0;
-	float hlp_r = 0;
-	while (hlp_y < r)
-	{
-		if (hlp_y + 2 > r)
-		{
-			break;
-		}
-		hlp_y += GetRandNumb(2, 3);
-		hlp_r = sqrt(r * r - hlp_y * hlp_y);
-		for (int i = 0; i <= 360; i += GetRandNumb(1, 10))
-		{
-			crd.x = hlp_r * cos(i);
-			crd.y = hlp_y;
-			crd.z = hlp_r * sin(i);
-			p.push_back(crd);
-		}
-	}
-	//----------------------------------------
+	CreateUpHemisphere(r);
 
 	// Генерация нижней полусферы
-	hlp_y = 0;
-	hlp_r = 0;
-	while ((-hlp_y) < r)
-	{
-		if (-(hlp_y - 2) > r)
-		{
-			break;
-		}
-		hlp_y -= GetRandNumb(2, 3);
-		hlp_r = sqrt(r * r - ((-hlp_y) * (-hlp_y)));
-		for (int i = 0; i <= 360; i += GetRandNumb(1, 10))
-		{
-			crd.x = hlp_r * cos(i);
-			crd.y = hlp_y;
-			crd.z = hlp_r * sin(i);
-			p.push_back(crd);
-		}
-	}
-	//----------------------------------------
+	CreateDownHemisphere(r);
 
-	f.push_back(p);
-	ID++;
-	return ID;
+	++ID();
 }
 
-// Запись точек цилиндра в CSV
-/*void Cylinder::GetCSV()
+// Конструктор сферы с заданным радиусом
+Sphere::Sphere(double r)
 {
-	int ID = Cylinder::CreateCylinder();
-	ofstream CSV;
-	ifstream check("Example.csv");
-	if (!check.is_open())
-	{
-		CSV.open("Example.csv");
-		CSV << "Type;ID;X;Y;Z" << endl;
-		CSV.close();
-	}
-	CSV.open("Example.csv", ios_base::app);
-	for (int i = 0; i < p.size(); i++)
-	{
-		CSV << "1;" << ID << ';' << p[i].x << ';' << p[i].y << ';' << p[i].z << endl;
-	}
-	CSV.close();
+	// Генерация образующей окружности сферы
+	CreateFooting(r);
+
+	// Генерация верхней полусферы
+	CreateUpHemisphere(r);
+
+	// Генерация нижней полусферы
+	CreateDownHemisphere(r);
+
+	++ID();
 }
-*/
-void Figure::GetCSV()
+
+void Figure::GetAsCSV()
 {
 	ofstream CSV;
 	ifstream check("Example.csv");
 	if (!check.is_open())
 	{
 		CSV.open("Example.csv");
-		CSV << "Type;ID;X;Y;Z" << endl;
+		CSV << "Number;Type;ID;X;Y;Z" << endl;
 		CSV.close();
 	}
 	CSV.open("Example.csv", ios_base::app);
 	for (int i = 0; i < p.size(); i++)
 	{
-		CSV <<  << endl;
+//		CSV << Number << ';' << <<  << endl;
 	}
 	CSV.close();
 }
 
-// Запись точек сферы в CSV
-/*void Sphere::GetCSV()
-
+// Запись цилиндра в CSV
+void Cylinder::GetAsCSV() 
 {
-	int ID = Sphere::CreateSphere();
 	ofstream CSV;
-	ifstream check("Example.csv");
+	ifstream check("CSV.csv");
 	if (!check.is_open())
 	{
-		CSV.open("Example.csv");
-		CSV << "Type;ID;X;Y;Z" << endl;
+		CSV.open("CSV.csv");
+		CSV << "Number;Type;ID;X;Y;Z" << endl;
 		CSV.close();
 	}
-	CSV.open("Example.csv", ios_base::app);
+	++Number();
+	CSV.open("CSV.csv", ios_base::app);
 	for (int i = 0; i < p.size(); i++)
 	{
-		CSV << "2;" << ID << ';' << p[i].x << ';' << p[i].y << ';' << p[i].z << endl;
+		CSV << Number() << ';' << '1' << ';' << ID() << ';' << p[i].x << p[i].y << p[i].z << endl;
 	}
 	CSV.close();
 }
-*/
 
-// Запись точек поверхности в CSV
+// Запись сферы в CSV
+void Sphere::GetAsCSV()
+
+{
+	ofstream CSV;
+	ifstream check("CSV.csv");
+	if (!check.is_open())
+	{
+		CSV.open("CSV.csv");
+		CSV << "Number;Type;ID;X;Y;Z" << endl;
+		CSV.close();
+	}
+	++Number();
+	CSV.open("CSV.csv", ios_base::app);
+	for (int i = 0; i < p.size(); i++)
+	{
+		CSV << Number() << ';' << '2' << ';' << ID() << ';' << p[i].x << p[i].y << p[i].z << endl;
+	}
+	CSV.close();
+}
+
+
+// Запись поверхности в CSV
 void Surface::GetCSV()
 {
 
@@ -175,36 +143,38 @@ double Figure::GetRandNumb(int min, int max)
 }
 
 // Функция генерации основания и вершины цилиндра
-void Cylinder::CreateFooting(Point crd, double r, double h)
+void Cylinder::CreateFooting(double r, double h)
 {
+	Point dot;
 	// x = r*cos(fi), y = r * sin(fi)
 	double hlp_r = r;
 	for (r; r > 0; r -= 2)  // изменение радиуса круга для заполнения основания
 	{
 		for (int i = 0; i <= 360; i += 5)
 		{
-			crd.x = r * cos(i);
-			crd.y = 0;
-			crd.z = r * sin(i);
-			p.push_back(crd);
+			dot.x = r * cos(i);
+			dot.y = 0;
+			dot.z = r * sin(i);
+			p.push_back(dot);
 		}
 	}
 	for (hlp_r; hlp_r > 0; hlp_r -= 2)  // изменение радиуса круга для заполнения вершины
 	{
 		for (int i = 0; i <= 360; i += 5)
 		{
-			crd.x = hlp_r * cos(i);
-			crd.y = h;
-			crd.z = hlp_r * sin(i);
-			p.push_back(crd);
+			dot.x = hlp_r * cos(i);
+			dot.y = h;
+			dot.z = hlp_r * sin(i);
+			p.push_back(dot);
 
 		}
 	}
 }
 
 // Функция генерации стенок цилиндра
-void Cylinder::CreateWalls(Point crd, double r, double h)
+void Cylinder::CreateWalls(double r, double h)
 {
+	Point dot;
 	double hlp_y = 0;
 	double k = 0;
 	while (hlp_y < h)
@@ -213,10 +183,68 @@ void Cylinder::CreateWalls(Point crd, double r, double h)
 		hlp_y += k;
 		for (int i = 0; i <= 360; i += 5)
 		{
-			crd.x = r * cos(i);
-			crd.y = hlp_y;
-			crd.z = r * sin(i);
-			p.push_back(crd);
+			dot.x = r * cos(i);
+			dot.y = hlp_y;
+			dot.z = r * sin(i);
+			p.push_back(dot);
+		}
+	}
+}
+
+void Sphere::CreateFooting(double r)
+{
+	Point dot;
+	for (int i = 0; i <= 360; i += 2)
+	{
+		dot.x = r * cos(i);
+		dot.y = 0;
+		dot.z = r * sin(i);
+		p.push_back(dot);
+	}
+}
+
+void Sphere::CreateUpHemisphere(double r)
+{
+	Point dot;
+	float hlp_y = 0;
+	float hlp_r = 0;
+	while (hlp_y < r)
+	{
+		if (hlp_y + 2 > r)
+		{
+			break;
+		}
+		hlp_y += GetRandNumb(2, 3);
+		hlp_r = sqrt(r * r - hlp_y * hlp_y);
+		for (int i = 0; i <= 360; i += GetRandNumb(1, 10))
+		{
+			dot.x = hlp_r * cos(i);
+			dot.y = hlp_y;
+			dot.z = hlp_r * sin(i);
+			p.push_back(dot);
+		}
+	}
+}
+
+void Sphere::CreateDownHemisphere(double r)
+{
+	Point dot;
+	float hlp_y = 0;
+	float hlp_r = 0;
+	while ((-hlp_y) < r)
+	{
+		if (-(hlp_y - 2) > r)
+		{
+			break;
+		}
+		hlp_y -= GetRandNumb(2, 3);
+		hlp_r = sqrt(r * r - ((-hlp_y) * (-hlp_y)));
+		for (int i = 0; i <= 360; i += GetRandNumb(1, 10))
+		{
+			dot.x = hlp_r * cos(i);
+			dot.y = hlp_y;
+			dot.z = hlp_r * sin(i);
+			p.push_back(dot);
 		}
 	}
 }
