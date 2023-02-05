@@ -16,7 +16,8 @@ class Figure {
 	public:
 		vector <Point> p;
 		vector <vector <Point>> f;
-		double GetRandNumb(int min, int max); // Функция генерации рандомного числа в диапазоне от min до max
+		double GetRandRealNumb(int min, int max); // Функция генерации рандомного вещественного числа в диапазоне от min до max
+		int GetRandIntNumb(int min, int max); // Функция генерации рандомного целого числа в диапазоне от min до max
 		virtual void GetAsCSV();
 		size_t& Number() { static size_t c = 0; return c; }
 };
@@ -38,8 +39,13 @@ private:
 // Класс, описывающий поверхность
 class Surface: public Figure {
 	public:
-		int CreateSurface();
-		void GetCSV();
+		int Num_Points;
+		double angle;
+		Surface();
+		Surface(int Num_Points);
+		void GetAsCSV() override;
+private:
+	size_t& ID() { static size_t c = 0; return c; }
 };
 
 // Класс, описывающий сферу

@@ -8,14 +8,12 @@ using namespace std;
 
 int main()
 {
-	Sphere Sph = Sphere();
-	Cylinder Cyl = Cylinder();
-	Cyl.GetAsCSV();
-	Sph.GetAsCSV();
-	Cyl = Cylinder();
-	Sph = Sphere();
-	Cyl.GetAsCSV();
-	Sph.GetAsCSV();
+	Figure* F = new Surface();
+	F->GetAsCSV();
+	delete F;
+	F = new Cylinder();
+	F->GetAsCSV();
+	delete F;
 
 	return 0;
 }
