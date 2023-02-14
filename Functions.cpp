@@ -1,37 +1,41 @@
 
+#define _USE_MATH_DEFINES
 #include "Classes.h"
 #include "Randomization.cpp"
+#include <cmath>
 
 // Конструктор поверхности с рандомным кол-вом точек (от 50 до 10000)
-Surface::Surface()
+Plane::Plane()
 {
 	Point dot;
 	Num_Points = GetRandIntNumb(50, 10000);
 	angle = GetRandRealNumb(0, 360);
-	double a = cos(angle * 3.14 / 180.0);
-	double b = sin(angle * 3.14 / 180.0);              // Плоскость задана уравнением ax + by + c = z
+	double a = cos(angle * M_PI / 180.0);
+	double b = sin(angle * M_PI / 180.0);              // Плоскость задана уравнением ax + by + c = z
 	for (int i = 0; i < Num_Points; i++) {
 		dot.x = GetRandRealNumb(-1, 1);
 		dot.y = GetRandRealNumb(-1, 1);
 		dot.z = -(a * dot.x + b * dot.y);
 		p.push_back(dot);
 	}
+	f.push_back(p);
 	++ID();
 }
 
 // Конструктор поверхности с заданным кол-вом точек (Num_Points)
-Surface::Surface(int Num_Points)
+Plane::Plane(int Num_Points)
 {
 	Point dot;
 	angle = GetRandRealNumb(0, 360);
-	double a = cos(angle * 3.14 / 180.0);
-	double b = sin(angle * 3.14 / 180.0);
+	double a = cos(angle * M_PI / 180.0);
+	double b = sin(angle * M_PI / 180.0);
 	for (int i = 0; i < Num_Points; i++) {
 		dot.x = GetRandRealNumb(0, 1);
 		dot.y = GetRandRealNumb(0, 1);
 		dot.z = -(a * dot.x + b * dot.y);
 		p.push_back(dot);
 	}
+	f.push_back(p);
 	++ID();
 }
 
@@ -46,6 +50,7 @@ Cylinder::Cylinder()
 
 	// Генерация стенок цилиндра
 	CreateWalls(r, h);
+	f.push_back(p);
 	++ID();
 }
 
@@ -57,6 +62,7 @@ Cylinder::Cylinder(double r, double h)
 
 	// Генерация стенок цилиндра
 	CreateWalls(r, h);
+	f.push_back(p);
 	++ID();
 }
 
@@ -74,6 +80,7 @@ Sphere::Sphere()
 	// Генерация нижней полусферы
 	CreateDownHemisphere(r);
 
+	f.push_back(p);
 	++ID();
 }
 
@@ -89,23 +96,27 @@ Sphere::Sphere(double r)
 	// Генерация нижней полусферы
 	CreateDownHemisphere(r);
 
+	f.push_back(p);
 	++ID();
 }
 
 void Figure::GetAsCSV()
 {
 	ofstream CSV;
-	ifstream check("Example.csv");
+	ifstream check("CSV.csv");
 	if (!check.is_open())
 	{
-		CSV.open("Example.csv");
+		CSV.open("CSV.csv");
 		CSV << "Number;Type;ID;X;Y;Z" << endl;
 		CSV.close();
 	}
-	CSV.open("Example.csv", ios_base::app);
-	for (int i = 0; i < p.size(); i++)
-	{
-//		CSV << Number << ';' << <<  << endl;
+	CSV.open("CSV.csv", ios_base::app);
+	for (int i = 0; i < f.size(); i++)
+	{ 
+		for (int g = 0; g < p.size(); g++)
+		{
+			CSV << Number() << ';' << '1' << ';' << ID() << ';' << f[i][g].x << ';' << f[i][g].y << ';' << f[i][g].z << endl;
+		}
 	}
 	CSV.close();
 }
@@ -153,7 +164,7 @@ void Sphere::GetAsCSV()
 
 
 // Запись поверхности в CSV
-void Surface::GetAsCSV()
+void Plane::GetAsCSV()
 {
 	ofstream CSV;
 	ifstream check("CSV.csv");

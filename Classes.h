@@ -18,6 +18,8 @@ class Figure {
 		vector <vector <Point>> f;
 		virtual void GetAsCSV();
 		size_t& Number() { static size_t c = 0; return c; }
+private:
+	size_t& ID() { static size_t c = 0; return c; }
 };
 
 // Класс, описывающий цилиндр
@@ -35,12 +37,12 @@ private:
 };
 
 // Класс, описывающий поверхность
-class Surface: public Figure {
+class Plane: public Figure {
 	public:
 		int Num_Points;
 		double angle;
-		Surface();
-		Surface(int Num_Points);
+		Plane();
+		Plane(int Num_Points);
 		void GetAsCSV() override;
 private:
 	size_t& ID() { static size_t c = 0; return c; }

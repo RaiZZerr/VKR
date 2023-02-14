@@ -8,12 +8,12 @@ using namespace std;
 
 int main()
 {
-	Figure* F = new Surface();
+	Figure* F = new Plane();
 	F->GetAsCSV();
 	delete F;
-	F = new Cylinder();
-	F->GetAsCSV();
-	delete F;
+	Figure* S = new Cylinder();
+	S->GetAsCSV();
+	delete S;
 
 	return 0;
 }
