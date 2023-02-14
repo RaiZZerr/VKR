@@ -1,5 +1,6 @@
 
 #include "Classes.h"
+#include "Randomization.cpp"
 
 // Конструктор поверхности с рандомным кол-вом точек (от 50 до 10000)
 Surface::Surface()
@@ -170,25 +171,6 @@ void Surface::GetAsCSV()
 	}
 	CSV.close();
 }
-
-// Функция генерации рандомного вещественного числа в диапазоне от min до max
-double Figure::GetRandRealNumb(int min, int max)
-{
-	random_device rd;
-	mt19937 gen(rd());
-	uniform_real_distribution<> dist(min, max);
-	return dist(gen);
-}
-
-// Функция генерации рандомного целого числа в диапазоне от min до max
-int Figure::GetRandIntNumb(int min, int max)
-{
-	random_device rd;
-	mt19937 gen(rd());
-	uniform_int_distribution<> dist(min, max);
-	return dist(gen);
-}
-
 
 // Функция генерации основания и вершины цилиндра
 void Cylinder::CreateFooting(double r, double h)

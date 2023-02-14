@@ -16,8 +16,6 @@ class Figure {
 	public:
 		vector <Point> p;
 		vector <vector <Point>> f;
-		double GetRandRealNumb(int min, int max); // Функция генерации рандомного вещественного числа в диапазоне от min до max
-		int GetRandIntNumb(int min, int max); // Функция генерации рандомного целого числа в диапазоне от min до max
 		virtual void GetAsCSV();
 		size_t& Number() { static size_t c = 0; return c; }
 };
