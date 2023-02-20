@@ -121,6 +121,11 @@ void Figure::GetAsCSV()
 	CSV.close();
 }
 
+void Figure::GetAsJSON()
+{
+
+}
+
 // Запись цилиндра в CSV
 void Cylinder::GetAsCSV() 
 {
@@ -139,6 +144,12 @@ void Cylinder::GetAsCSV()
 		CSV << Number() << ';' << '1' << ';' << ID() << ';' << p[i].x << ';' << p[i].y << ';' << p[i].z << endl;
 	}
 	CSV.close();
+}
+
+// Запись цилиндра в JSON
+void Cylinder::GetAsJSON()
+{
+
 }
 
 // Запись сферы в CSV
@@ -162,6 +173,12 @@ void Sphere::GetAsCSV()
 	CSV.close();
 }
 
+// Запись сферы в JSON
+void Sphere::GetAsJSON()
+{
+
+}
+
 
 // Запись поверхности в CSV
 void Plane::GetAsCSV()
@@ -181,6 +198,12 @@ void Plane::GetAsCSV()
 		CSV << Number() << ';' << '3' << ';' << ID() << ';' << p[i].x << ';' << p[i].y << ';' << p[i].z << endl;
 	}
 	CSV.close();
+}
+
+// Запись поверхности в JSON
+void Plane::GetAsJSON()
+{
+	
 }
 
 // Функция генерации основания и вершины цилиндра

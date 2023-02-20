@@ -1,12 +1,10 @@
 
-#include <vector>
 #include <random>
-#include <fstream>
 
 using namespace std;
 
-double GetRandRealNumb(int min, int max); // Функция генерации рандомного вещественного числа в диапазоне от min до max
-int GetRandIntNumb(int min, int max); // Функция генерации рандомного целого числа в диапазоне от min до max
+inline double GetRandRealNumb(int min, int max); // Функция генерации рандомного вещественного числа в диапазоне от min до max
+inline int GetRandIntNumb(int min, int max); // Функция генерации рандомного целого числа в диапазоне от min до max
 
 // Функция генерации рандомного вещественного числа в диапазоне от min до max
 double GetRandRealNumb(int min, int max)
