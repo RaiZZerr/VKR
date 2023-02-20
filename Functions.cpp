@@ -151,6 +151,7 @@ void Cylinder::GetAsJSON()
 {
 	json j;
 	ofstream JSON("JSON.json");
+
 	++Number();
 	for (int i = 0; i < p.size(); i++)
 	{
