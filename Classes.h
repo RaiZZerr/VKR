@@ -2,8 +2,10 @@
 #include <vector>
 #include <random>
 #include <fstream>
+#include <nlohmann/json.hpp>
 
 using namespace std;
+using nlohmann::json;
 
 // Класс описания точки
 class Point {

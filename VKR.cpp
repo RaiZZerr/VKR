@@ -13,6 +13,7 @@ int main()
 	delete F;
 	Figure* S = new Cylinder();
 	S->GetAsCSV();
+	S->GetAsJSON();
 	delete S;
 
 	return 0;

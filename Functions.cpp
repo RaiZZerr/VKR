@@ -149,7 +149,21 @@ void Cylinder::GetAsCSV()
 // Запись цилиндра в JSON
 void Cylinder::GetAsJSON()
 {
-
+	json j;
+	ofstream JSON("JSON.json");
+	++Number();
+	for (int i = 0; i < p.size(); i++)
+	{
+		j = {
+			{"Number", Number()},
+			{"Type", 1},
+			{"ID", ID()},
+			{"X", p[i].x},
+			{"Y", p[i].y},
+			{"Z", p[i].z}
+		};
+	}
+	JSON << setw(4) << j << endl;
 }
 
 // Запись сферы в CSV
