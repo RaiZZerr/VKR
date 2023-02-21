@@ -9,12 +9,10 @@ using namespace std;
 int main()
 {
 	Figure* F = new Plane();
-	F->GetAsCSV();
+	F->GetAsJSON();
 	delete F;
 	Figure* S = new Cylinder();
-	S->GetAsCSV();
 	S->GetAsJSON();
 	delete S;
-
 	return 0;
 }

@@ -153,16 +153,20 @@ void Cylinder::GetAsJSON()
 	ofstream JSON("JSON.json");
 
 	++Number();
-	for (int i = 0; i < p.size(); i++)
-	{
-		j = {
+	j = {
 			{"Number", Number()},
 			{"Type", 1},
 			{"ID", ID()},
-			{"X", p[i].x},
-			{"Y", p[i].y},
-			{"Z", p[i].z}
-		};
+			{"X", {p[0].x}},
+			{"Y", {p[0].y}},
+			{"Z", {p[0].z}}
+	};
+	for (int i = 1; i < p.size(); i++)
+	{
+		j["X"] += p[i].x;
+		j["Y"] += p[i].y;
+		j["Z"] += p[i].z;
+		
 	}
 	JSON << setw(4) << j << endl;
 }
@@ -191,7 +195,26 @@ void Sphere::GetAsCSV()
 // Запись сферы в JSON
 void Sphere::GetAsJSON()
 {
+	json j;
+	ofstream JSON("JSON.json");
 
+	++Number();
+	j = {
+			{"Number", Number()},
+			{"Type", 2},
+			{"ID", ID()},
+			{"X", {p[0].x}},
+			{"Y", {p[0].y}},
+			{"Z", {p[0].z}}
+	};
+	for (int i = 1; i < p.size(); i++)
+	{
+		j["X"] += p[i].x;
+		j["Y"] += p[i].y;
+		j["Z"] += p[i].z;
+
+	}
+	JSON << setw(4) << j << endl;
 }
 
 
@@ -218,7 +241,26 @@ void Plane::GetAsCSV()
 // Запись поверхности в JSON
 void Plane::GetAsJSON()
 {
-	
+	json j;
+	ofstream JSON("JSON.json");
+
+	++Number();
+	j = {
+			{"Number", Number()},
+			{"Type", 3},
+			{"ID", ID()},
+			{"X", {p[0].x}},
+			{"Y", {p[0].y}},
+			{"Z", {p[0].z}}
+	};
+	for (int i = 1; i < p.size(); i++)
+	{
+		j["X"] += p[i].x;
+		j["Y"] += p[i].y;
+		j["Z"] += p[i].z;
+
+	}
+	JSON << setw(4) << j << endl;
 }
 
 // Функция генерации основания и вершины цилиндра
