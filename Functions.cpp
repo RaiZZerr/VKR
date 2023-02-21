@@ -13,8 +13,8 @@ Plane::Plane()
 	double a = cos(angle * M_PI / 180.0);
 	double b = sin(angle * M_PI / 180.0);              // Плоскость задана уравнением ax + by + c = z
 	for (int i = 0; i < Num_Points; i++) {
-		dot.x = GetRandRealNumb(-1, 1);
-		dot.y = GetRandRealNumb(-1, 1);
+		dot.x = GetRandRealNumb(-50, 50);
+		dot.y = GetRandRealNumb(-50, 50);
 		dot.z = -(a * dot.x + b * dot.y);
 		p.push_back(dot);
 	}
@@ -148,20 +148,13 @@ void Cylinder::GetAsCSV()
 
 // Запись цилиндра в JSON
 void Cylinder::GetAsJSON()
-{
-	json j;
+{	
 	ofstream JSON("JSON.json");
-
 	++Number();
-	j = {
-			{"Number", Number()},
-			{"Type", 1},
-			{"ID", ID()},
-			{"X", {p[0].x}},
-			{"Y", {p[0].y}},
-			{"Z", {p[0].z}}
-	};
-	for (int i = 1; i < p.size(); i++)
+	j["Number"] += Number();
+	j["Type"] += 1;
+	j["ID"] += ID();
+	for (int i = 0; i < p.size(); i++)
 	{
 		j["X"] += p[i].x;
 		j["Y"] += p[i].y;
@@ -195,19 +188,12 @@ void Sphere::GetAsCSV()
 // Запись сферы в JSON
 void Sphere::GetAsJSON()
 {
-	json j;
 	ofstream JSON("JSON.json");
-
 	++Number();
-	j = {
-			{"Number", Number()},
-			{"Type", 2},
-			{"ID", ID()},
-			{"X", {p[0].x}},
-			{"Y", {p[0].y}},
-			{"Z", {p[0].z}}
-	};
-	for (int i = 1; i < p.size(); i++)
+	j["Number"] += Number();
+	j["Type"] += 2;
+	j["ID"] += ID();
+	for (int i = 0; i < p.size(); i++)
 	{
 		j["X"] += p[i].x;
 		j["Y"] += p[i].y;
@@ -241,19 +227,12 @@ void Plane::GetAsCSV()
 // Запись поверхности в JSON
 void Plane::GetAsJSON()
 {
-	json j;
 	ofstream JSON("JSON.json");
-
 	++Number();
-	j = {
-			{"Number", Number()},
-			{"Type", 3},
-			{"ID", ID()},
-			{"X", {p[0].x}},
-			{"Y", {p[0].y}},
-			{"Z", {p[0].z}}
-	};
-	for (int i = 1; i < p.size(); i++)
+	j["Number"] += Number();
+	j["Type"] += 3;
+	j["ID"] += ID();
+	for (int i = 0; i < p.size(); i++)
 	{
 		j["X"] += p[i].x;
 		j["Y"] += p[i].y;

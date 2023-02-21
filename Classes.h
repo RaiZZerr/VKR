@@ -16,6 +16,14 @@ class Point {
 // Класс, описывающий любую фигуру
 class Figure {
 	public:
+		json j = {
+			{"Number", {}},
+			{"Type", {}},
+			{"ID", {}},
+			{"X", {}},
+			{"Y", {}},
+			{"Z", {}}
+		};;
 		vector <Point> p;
 		vector <vector <Point>> f;
 		virtual void GetAsCSV();

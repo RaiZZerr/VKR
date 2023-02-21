@@ -8,11 +8,12 @@ using namespace std;
 
 int main()
 {
-	Figure* F = new Plane();
-	F->GetAsJSON();
+	std::string csv;
+	Figure* F = new Cylinder();
+	csv = F->GetAsJSON();
 	delete F;
-	Figure* S = new Cylinder();
-	S->GetAsJSON();
+	Figure* S = new Sphere();
+	csv += S->GetAsJSON();
 	delete S;
 	return 0;
 }
