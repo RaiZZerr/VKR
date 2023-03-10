@@ -2,6 +2,7 @@
 #define _USE_MATH_DEFINES
 #include "Classes.h"
 #include "Randomization.cpp"
+#include <string>
 #include <cmath>
 
 // Конструктор поверхности с рандомным кол-вом точек (от 50 до 10000)
@@ -121,13 +122,7 @@ void Figure::GetAsCSV()
 	CSV.close();
 }
 
-void Figure::GetAsJSON()
-{
-
-}
-
-// Запись цилиндра в CSV
-void Cylinder::GetAsCSV() 
+void Figure::GetAsCSV()
 {
 	ofstream CSV;
 	ifstream check("CSV.csv");
@@ -137,13 +132,65 @@ void Cylinder::GetAsCSV()
 		CSV << "Number;Type;ID;X;Y;Z" << endl;
 		CSV.close();
 	}
-	++Number();
 	CSV.open("CSV.csv", ios_base::app);
-	for (int i = 0; i < p.size(); i++)
+	for (int i = 0; i < f.size(); i++)
 	{
-		CSV << Number() << ';' << '1' << ';' << ID() << ';' << p[i].x << ';' << p[i].y << ';' << p[i].z << endl;
+		for (int g = 0; g < p.size(); g++)
+		{
+			CSV << Number() << ';' << '1' << ';' << ID() << ';' << f[i][g].x << ';' << f[i][g].y << ';' << f[i][g].z << endl;
+		}
 	}
 	CSV.close();
+}
+
+void Figure::GetAsJSON()
+{
+
+}
+
+// Запись цилиндра в CSV
+//void Cylinder::GetAsCSV() 
+//{
+//	ofstream CSV;
+//	ifstream check("CSV.csv");
+//	if (!check.is_open())
+//	{
+//		CSV.open("CSV.csv");
+//		CSV << "Number;Type;ID;X;Y;Z" << endl;
+//		CSV.close();
+//	}
+//	++Number();
+//	CSV.open("CSV.csv", ios_base::app);
+//	for (int i = 0; i < p.size(); i++)
+//	{
+//		CSV << Number() << ';' << '1' << ';' << ID() << ';' << p[i].x << ';' << p[i].y << ';' << p[i].z << endl;
+//	}
+//	CSV.close();
+//}
+
+void Figure::CreateCSV(string a)
+{
+	ofstream File;
+	ifstream check("File.csv");
+	File.open("File.csv", ios_base::app);
+	File << a;
+	File.close();
+}
+
+string Cylinder::GetAsCSV()
+{
+	string str;
+	int i;
+	if (str.empty())
+	{
+		str = "Number;Type;ID;X;Y;Z\n";
+	}
+	++Number();
+	for (int i = 0; i < p.size(); i++)
+	{
+		str += Number() + ';' + '1' + ID() + ';' + p[i].x + ';' + p[i].y + ';' + p[i].z + '\n';
+	}
+	return str;
 }
 
 // Запись цилиндра в JSON

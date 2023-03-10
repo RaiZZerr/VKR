@@ -10,10 +10,8 @@ int main()
 {
 	std::string csv;
 	Figure* F = new Cylinder();
-	csv = F->GetAsJSON();
+	csv = F->GetAsCSV();
+	CreateCSV(csv);
 	delete F;
-	Figure* S = new Sphere();
-	csv += S->GetAsJSON();
-	delete S;
 	return 0;
 }
