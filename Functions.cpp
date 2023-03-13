@@ -101,28 +101,7 @@ Sphere::Sphere(double r)
 	++ID();
 }
 
-void Figure::GetAsCSV()
-{
-	ofstream CSV;
-	ifstream check("CSV.csv");
-	if (!check.is_open())
-	{
-		CSV.open("CSV.csv");
-		CSV << "Number;Type;ID;X;Y;Z" << endl;
-		CSV.close();
-	}
-	CSV.open("CSV.csv", ios_base::app);
-	for (int i = 0; i < f.size(); i++)
-	{ 
-		for (int g = 0; g < p.size(); g++)
-		{
-			CSV << Number() << ';' << '1' << ';' << ID() << ';' << f[i][g].x << ';' << f[i][g].y << ';' << f[i][g].z << endl;
-		}
-	}
-	CSV.close();
-}
-
-void Figure::GetAsCSV()
+string Figure::GetAsCSV()
 {
 	ofstream CSV;
 	ifstream check("CSV.csv");
@@ -141,6 +120,8 @@ void Figure::GetAsCSV()
 		}
 	}
 	CSV.close();
+	string str;
+	return str;
 }
 
 void Figure::GetAsJSON()
@@ -177,18 +158,28 @@ void Figure::CreateCSV(string a)
 	File.close();
 }
 
+void Cylinder::CreateCSV(string a)
+{
+	ofstream File;
+	ifstream check("File.csv");
+	if (!check.is_open())
+	{
+		File.open("File.csv");
+		File << "Number;Type;Id;X;Y;Z" << endl;
+		File.close();
+	}
+	File.open("File.csv", ios_base::app);
+	File << a;
+	File.close();
+}
+
 string Cylinder::GetAsCSV()
 {
 	string str;
-	int i;
-	if (str.empty())
-	{
-		str = "Number;Type;ID;X;Y;Z\n";
-	}
 	++Number();
 	for (int i = 0; i < p.size(); i++)
 	{
-		str += Number() + ';' + '1' + ID() + ';' + p[i].x + ';' + p[i].y + ';' + p[i].z + '\n';
+		str += to_string(Number()) + ";" + "1" + ";" + to_string(ID()) + string(";") + to_string(p[i].x) + ";" + to_string(p[i].y) + ";" + to_string(p[i].z) + string("\n");
 	}
 	return str;
 }
@@ -212,7 +203,7 @@ void Cylinder::GetAsJSON()
 }
 
 // Запись сферы в CSV
-void Sphere::GetAsCSV()
+string Sphere::GetAsCSV()
 
 {
 	ofstream CSV;
@@ -230,6 +221,8 @@ void Sphere::GetAsCSV()
 		CSV << Number() << ';' << '2' << ';' << ID() << ';' << p[i].x << ';' << p[i].y << ';' << p[i].z << endl;
 	}
 	CSV.close();
+	string str;
+	return str;
 }
 
 // Запись сферы в JSON
@@ -252,7 +245,7 @@ void Sphere::GetAsJSON()
 
 
 // Запись поверхности в CSV
-void Plane::GetAsCSV()
+string Plane::GetAsCSV()
 {
 	ofstream CSV;
 	ifstream check("CSV.csv");
@@ -269,6 +262,8 @@ void Plane::GetAsCSV()
 		CSV << Number() << ';' << '3' << ';' << ID() << ';' << p[i].x << ';' << p[i].y << ';' << p[i].z << endl;
 	}
 	CSV.close();
+	string str;
+	return str;
 }
 
 // Запись поверхности в JSON

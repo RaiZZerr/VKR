@@ -8,10 +8,12 @@ using namespace std;
 
 int main()
 {
-	std::string csv;
+	string csv;
 	Figure* F = new Cylinder();
 	csv = F->GetAsCSV();
-	CreateCSV(csv);
 	delete F;
+	Figure* G = new Cylinder();
+	csv += G->GetAsCSV();
+	G->CreateCSV(csv);
 	return 0;
 }
