@@ -16,20 +16,15 @@ class Point {
 // Класс, описывающий любую фигуру
 class Figure {
 	public:
-		json j = {
-			{"Number", {}},
-			{"Type", {}},
-			{"ID", {}},
-			{"X", {}},
-			{"Y", {}},
-			{"Z", {}}
-		};;
+		json j;
 		vector <Point> p;
 		vector <vector <Point>> f;
-		virtual void CreateCSV(string a);
+		virtual void WriteInCSV(string a);
+		virtual void WriteInJSON(string a);
 		virtual string GetAsCSV();
-		virtual void GetAsJSON();
-		size_t& Number() { static size_t c = 0; return c; }
+		virtual string GetAsJSON();
+		size_t& NumberInCSV() { static size_t c = 0; return c; }
+		size_t& NumberInJSON() { static size_t c = 0; return c; }
 private:
 	size_t& ID() { static size_t c = 0; return c; }
 };
@@ -42,9 +37,10 @@ class Cylinder: public Figure {
 		Cylinder(double r, double h);
 		void CreateFooting(double r, double h);
 		void CreateWalls(double r, double h);
-		void CreateCSV(string a) override;
+		void WriteInCSV(string a) override;
+		void WriteInJSON(string a) override;
 		string GetAsCSV() override;
-		void GetAsJSON() override;
+		string GetAsJSON() override;
 private:
 	size_t& ID() { static size_t c = 0; return c; }
 	
@@ -58,7 +54,9 @@ class Plane: public Figure {
 		Plane();
 		Plane(int Num_Points);
 		string GetAsCSV() override;
-		void GetAsJSON() override;
+		string GetAsJSON() override;
+		void WriteInCSV(string a) override;
+		void WriteInJSON(string a) override;
 private:
 	size_t& ID() { static size_t c = 0; return c; }
 };
@@ -73,7 +71,9 @@ class Sphere: public Figure {
 		void CreateUpHemisphere(double r);
 		void CreateDownHemisphere(double r);
 		string GetAsCSV() override;
-		void GetAsJSON() override;
+		string GetAsJSON() override;
+		void WriteInCSV(string a) override;
+		void WriteInJSON(string a) override;
 private:
 	size_t& ID() { static size_t c = 0; return c; }
 };

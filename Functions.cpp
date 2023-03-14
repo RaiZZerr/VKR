@@ -101,32 +101,31 @@ Sphere::Sphere(double r)
 	++ID();
 }
 
-string Figure::GetAsCSV()
+// Запись в файл формата .json
+void Figure::WriteInJSON(string a)
 {
-	ofstream CSV;
-	ifstream check("CSV.csv");
-	if (!check.is_open())
-	{
-		CSV.open("CSV.csv");
-		CSV << "Number;Type;ID;X;Y;Z" << endl;
-		CSV.close();
-	}
-	CSV.open("CSV.csv", ios_base::app);
-	for (int i = 0; i < f.size(); i++)
-	{
-		for (int g = 0; g < p.size(); g++)
-		{
-			CSV << Number() << ';' << '1' << ';' << ID() << ';' << f[i][g].x << ';' << f[i][g].y << ';' << f[i][g].z << endl;
-		}
-	}
-	CSV.close();
-	string str;
-	return str;
+	a += "}";
+	a.erase(a.rfind(","), 1);
+	ofstream JSON("JSON.json");
+	JSON << setw(4) << a << endl;
 }
 
-void Figure::GetAsJSON()
+// Запись поверхности в файл формата .json
+void Plane::WriteInJSON(string a)
 {
+	a += "}";
+	a.erase(a.rfind(","), 1);
+	ofstream JSON("JSON.json");
+	JSON << setw(4) << a << endl;
+}
 
+// Запись сферы в файл формата .json
+void Sphere::WriteInJSON(string a)
+{
+	a += "}";
+	a.erase(a.rfind(","), 1);
+	ofstream JSON("JSON.json");
+	JSON << setw(4) << a << endl;
 }
 
 // Запись цилиндра в CSV
@@ -149,16 +148,8 @@ void Figure::GetAsJSON()
 //	CSV.close();
 //}
 
-void Figure::CreateCSV(string a)
-{
-	ofstream File;
-	ifstream check("File.csv");
-	File.open("File.csv", ios_base::app);
-	File << a;
-	File.close();
-}
-
-void Cylinder::CreateCSV(string a)
+// Запись в файл формата .csv
+void Figure::WriteInCSV(string a)
 {
 	ofstream File;
 	ifstream check("File.csv");
@@ -173,115 +164,258 @@ void Cylinder::CreateCSV(string a)
 	File.close();
 }
 
+// Запись цилиндра в файл формата .csv
+void Cylinder::WriteInCSV(string a)
+{
+	ofstream File;
+	ifstream check("File.csv");
+	if (!check.is_open())
+	{
+		File.open("File.csv");
+		File << "Number;Type;Id;X;Y;Z" << endl;
+		File.close();
+	}
+	File.open("File.csv", ios_base::app);
+	File << a;
+	File.close();
+}
+
+// Запись сферы в файл формата .csv
+void Sphere::WriteInCSV(string a)
+{
+	ofstream File;
+	ifstream check("File.csv");
+	if (!check.is_open())
+	{
+		File.open("File.csv");
+		File << "Number;Type;Id;X;Y;Z" << endl;
+		File.close();
+	}
+	File.open("File.csv", ios_base::app);
+	File << a;
+	File.close();
+}
+
+// Запись поверхности в файл формата .csv
+void Plane::WriteInCSV(string a)
+{
+	ofstream File;
+	ifstream check("File.csv");
+	if (!check.is_open())
+	{
+		File.open("File.csv");
+		File << "Number;Type;Id;X;Y;Z" << endl;
+		File.close();
+	}
+	File.open("File.csv", ios_base::app);
+	File << a;
+	File.close();
+}
+
+// Возвращает цилиндр в виде строки под формат .csv
 string Cylinder::GetAsCSV()
 {
 	string str;
-	++Number();
+	++NumberInCSV();
 	for (int i = 0; i < p.size(); i++)
 	{
-		str += to_string(Number()) + ";" + "1" + ";" + to_string(ID()) + string(";") + to_string(p[i].x) + ";" + to_string(p[i].y) + ";" + to_string(p[i].z) + string("\n");
+		str += to_string(NumberInCSV()) + ";" + "1" + ";" + to_string(ID()) + ";" + to_string(p[i].x) + ";" + to_string(p[i].y) + ";" + to_string(p[i].z) + "\n";
 	}
 	return str;
 }
 
-// Запись цилиндра в JSON
-void Cylinder::GetAsJSON()
+// Возвращает цилиндр в виде строки под формат .json
+string Cylinder::GetAsJSON()
 {	
-	ofstream JSON("JSON.json");
-	++Number();
-	j["Number"] += Number();
-	j["Type"] += 1;
-	j["ID"] += ID();
+	string str;
+	++NumberInJSON();
+	if (NumberInJSON() == 1)
+	{
+		str += "{ \n \"Figure " + to_string(NumberInJSON()) + "\": {\n \"Type\": 1,\n";
+	}
+	else
+	{
+		str += "\n \"Figure " + to_string(NumberInJSON()) + "\": {\n \"Type\": 1,\n";
+	}
+	str += "\"X\": [\n";
 	for (int i = 0; i < p.size(); i++)
 	{
-		j["X"] += p[i].x;
-		j["Y"] += p[i].y;
-		j["Z"] += p[i].z;
+		if (i == p.size() - 1)
+		{
+			str += to_string(p[i].x) + "\n";
+			break;
+		}
+		str += to_string(p[i].x) + ",\n";
 		
 	}
-	JSON << setw(4) << j << endl;
+	str += "],\n";
+	str += "\"Y\": [\n";
+	for (int i = 0; i < p.size(); i++)
+	{
+		if (i == p.size() - 1)
+		{
+			str += to_string(p[i].y) + "\n";
+			break;
+		}
+		str += to_string(p[i].y) + ",\n";
+
+	}
+	str += "],\n";
+	str += "\"Z\": [\n";
+	for (int i = 0; i < p.size(); i++)
+	{
+		if (i == p.size() - 1)
+		{
+			str += to_string(p[i].z) + "\n";
+			break;
+		}
+		str += to_string(p[i].z) + ",\n";
+
+	}
+	str += "]\n";
+	str += "},\n";
+	return str;
 }
 
-// Запись сферы в CSV
+// Запись цилиндра в файл формата .csv
+void Cylinder::WriteInJSON(string a)
+{
+	a += "}";
+	a.erase(a.rfind(","), 1);
+	ofstream JSON("JSON.json");
+	JSON << setw(4) << a << endl;
+}
+
+// Возвращает сферу в виде строки под формат .csv
 string Sphere::GetAsCSV()
 
 {
-	ofstream CSV;
-	ifstream check("CSV.csv");
-	if (!check.is_open())
-	{
-		CSV.open("CSV.csv");
-		CSV << "Number;Type;ID;X;Y;Z" << endl;
-		CSV.close();
-	}
-	++Number();
-	CSV.open("CSV.csv", ios_base::app);
+	string str;
+	++NumberInCSV();
 	for (int i = 0; i < p.size(); i++)
 	{
-		CSV << Number() << ';' << '2' << ';' << ID() << ';' << p[i].x << ';' << p[i].y << ';' << p[i].z << endl;
+		str += to_string(NumberInCSV()) + ";" + "2" + ";" + to_string(ID()) + ";" + to_string(p[i].x) + ";" + to_string(p[i].y) + ";" + to_string(p[i].z) + "\n";
 	}
-	CSV.close();
-	string str;
 	return str;
 }
 
-// Запись сферы в JSON
-void Sphere::GetAsJSON()
+// Возвращает сферу в виде строки под формат .json
+string Sphere::GetAsJSON()
 {
-	ofstream JSON("JSON.json");
-	++Number();
-	j["Number"] += Number();
-	j["Type"] += 2;
-	j["ID"] += ID();
+	string str;
+	++NumberInJSON();
+	if (NumberInJSON() == 1)
+	{
+		str += "{ \n \"Figure " + to_string(NumberInJSON()) + "\": {\n \"Type\": 2,\n";
+	}
+	else
+	{
+		str += "\n \"Figure " + to_string(NumberInJSON()) + "\": {\n \"Type\": 2,\n";
+	}
+	str += "\"X\": [\n";
 	for (int i = 0; i < p.size(); i++)
 	{
-		j["X"] += p[i].x;
-		j["Y"] += p[i].y;
-		j["Z"] += p[i].z;
+		if (i == p.size() - 1)
+		{
+			str += to_string(p[i].x) + "\n";
+			break;
+		}
+		str += to_string(p[i].x) + ",\n";
 
 	}
-	JSON << setw(4) << j << endl;
+	str += "],\n";
+	str += "\"Y\": [\n";
+	for (int i = 0; i < p.size(); i++)
+	{
+		if (i == p.size() - 1)
+		{
+			str += to_string(p[i].y) + "\n";
+			break;
+		}
+		str += to_string(p[i].y) + ",\n";
+
+	}
+	str += "],\n";
+	str += "\"Z\": [\n";
+	for (int i = 0; i < p.size(); i++)
+	{
+		if (i == p.size() - 1)
+		{
+			str += to_string(p[i].z) + "\n";
+			break;
+		}
+		str += to_string(p[i].z) + ",\n";
+
+	}
+	str += "]\n";
+	str += "},\n";
+	return str;
 }
 
 
-// Запись поверхности в CSV
+// Возвращает поверхность в виде строки под формат .csv
 string Plane::GetAsCSV()
 {
-	ofstream CSV;
-	ifstream check("CSV.csv");
-	if (!check.is_open())
-	{
-		CSV.open("CSV.csv");
-		CSV << "Number;Type;ID;X;Y;Z" << endl;
-		CSV.close();
-	}
-	++Number();
-	CSV.open("CSV.csv", ios_base::app);
+	string str;
+	++NumberInCSV();
 	for (int i = 0; i < p.size(); i++)
 	{
-		CSV << Number() << ';' << '3' << ';' << ID() << ';' << p[i].x << ';' << p[i].y << ';' << p[i].z << endl;
+		str += to_string(NumberInCSV()) + ";" + "3" + ";" + to_string(ID()) + ";" + to_string(p[i].x) + ";" + to_string(p[i].y) + ";" + to_string(p[i].z) + "\n";
 	}
-	CSV.close();
-	string str;
 	return str;
 }
 
-// Запись поверхности в JSON
-void Plane::GetAsJSON()
+// Возвращает поверхность в виде строки под формат .json
+string Plane::GetAsJSON()
 {
-	ofstream JSON("JSON.json");
-	++Number();
-	j["Number"] += Number();
-	j["Type"] += 3;
-	j["ID"] += ID();
+	string str;
+	++NumberInJSON();
+	if (NumberInJSON() == 1)
+	{
+		str += "{ \n \"Figure " + to_string(NumberInJSON()) + "\": {\n \"Type\": 3,\n";
+	}
+	else
+	{
+		str += "\n \"Figure " + to_string(NumberInJSON()) + "\": {\n \"Type\": 3,\n";
+	}
+	str += "\"X\": [\n";
 	for (int i = 0; i < p.size(); i++)
 	{
-		j["X"] += p[i].x;
-		j["Y"] += p[i].y;
-		j["Z"] += p[i].z;
+		if (i == p.size() - 1)
+		{
+			str += to_string(p[i].x) + "\n";
+			break;
+		}
+		str += to_string(p[i].x) + ",\n";
 
 	}
-	JSON << setw(4) << j << endl;
+	str += "],\n";
+	str += "\"Y\": [\n";
+	for (int i = 0; i < p.size(); i++)
+	{
+		if (i == p.size() - 1)
+		{
+			str += to_string(p[i].y) + "\n";
+			break;
+		}
+		str += to_string(p[i].y) + ",\n";
+
+	}
+	str += "],\n";
+	str += "\"Z\": [\n";
+	for (int i = 0; i < p.size(); i++)
+	{
+		if (i == p.size() - 1)
+		{
+			str += to_string(p[i].z) + "\n";
+			break;
+		}
+		str += to_string(p[i].z) + ",\n";
+
+	}
+	str += "]\n";
+	str += "},\n";
+	return str;
 }
 
 // Функция генерации основания и вершины цилиндра
@@ -392,4 +526,33 @@ void Sphere::CreateDownHemisphere(double r)
 			p.push_back(dot);
 		}
 	}
+}
+
+string Figure::GetAsCSV()
+{
+	ofstream CSV;
+	ifstream check("CSV.csv");
+	if (!check.is_open())
+	{
+		CSV.open("CSV.csv");
+		CSV << "Number;Type;ID;X;Y;Z" << endl;
+		CSV.close();
+	}
+	CSV.open("CSV.csv", ios_base::app);
+	for (int i = 0; i < f.size(); i++)
+	{
+		for (int g = 0; g < p.size(); g++)
+		{
+			CSV << NumberInCSV() << ';' << '1' << ';' << ID() << ';' << f[i][g].x << ';' << f[i][g].y << ';' << f[i][g].z << endl;
+		}
+	}
+	CSV.close();
+	string str;
+	return str;
+}
+
+string Figure::GetAsJSON()
+{
+	string str;
+	return str;
 }
