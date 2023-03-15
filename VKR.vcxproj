@@ -143,6 +143,7 @@
     <ClCompile Include="Functions.cpp" />
     <ClCompile Include="Randomization.cpp" />
     <ClCompile Include="VKR.cpp" />
+    <ClCompile Include="WriteInFile.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Classes.h" />

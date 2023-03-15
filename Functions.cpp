@@ -67,6 +67,20 @@ Cylinder::Cylinder(double r, double h)
 	++ID();
 }
 
+// Конструктор цилиндра с нормальным распределением для каждой точки с средним отклонением o
+Cylinder::Cylinder(double o)
+{
+	h = GetRandRealNumb(5, 100);
+	r = GetRandRealNumb(5, 100);
+	// Генерация основания и вершины цилиндра
+	CreateFooting(r, h, o);
+
+	// Генерация стенок цилиндра
+	CreateWalls(r, h, o);
+	f.push_back(p);
+	++ID();
+}
+
 // Конструктор рандомной сферы
 Sphere::Sphere()
 {
@@ -99,117 +113,6 @@ Sphere::Sphere(double r)
 
 	f.push_back(p);
 	++ID();
-}
-
-// Запись в файл формата .json
-void Figure::WriteInJSON(string a)
-{
-	a += "}";
-	a.erase(a.rfind(","), 1);
-	ofstream JSON("JSON.json");
-	JSON << setw(4) << a << endl;
-}
-
-// Запись поверхности в файл формата .json
-void Plane::WriteInJSON(string a)
-{
-	a += "}";
-	a.erase(a.rfind(","), 1);
-	ofstream JSON("JSON.json");
-	JSON << setw(4) << a << endl;
-}
-
-// Запись сферы в файл формата .json
-void Sphere::WriteInJSON(string a)
-{
-	a += "}";
-	a.erase(a.rfind(","), 1);
-	ofstream JSON("JSON.json");
-	JSON << setw(4) << a << endl;
-}
-
-// Запись цилиндра в CSV
-//void Cylinder::GetAsCSV() 
-//{
-//	ofstream CSV;
-//	ifstream check("CSV.csv");
-//	if (!check.is_open())
-//	{
-//		CSV.open("CSV.csv");
-//		CSV << "Number;Type;ID;X;Y;Z" << endl;
-//		CSV.close();
-//	}
-//	++Number();
-//	CSV.open("CSV.csv", ios_base::app);
-//	for (int i = 0; i < p.size(); i++)
-//	{
-//		CSV << Number() << ';' << '1' << ';' << ID() << ';' << p[i].x << ';' << p[i].y << ';' << p[i].z << endl;
-//	}
-//	CSV.close();
-//}
-
-// Запись в файл формата .csv
-void Figure::WriteInCSV(string a)
-{
-	ofstream File;
-	ifstream check("File.csv");
-	if (!check.is_open())
-	{
-		File.open("File.csv");
-		File << "Number;Type;Id;X;Y;Z" << endl;
-		File.close();
-	}
-	File.open("File.csv", ios_base::app);
-	File << a;
-	File.close();
-}
-
-// Запись цилиндра в файл формата .csv
-void Cylinder::WriteInCSV(string a)
-{
-	ofstream File;
-	ifstream check("File.csv");
-	if (!check.is_open())
-	{
-		File.open("File.csv");
-		File << "Number;Type;Id;X;Y;Z" << endl;
-		File.close();
-	}
-	File.open("File.csv", ios_base::app);
-	File << a;
-	File.close();
-}
-
-// Запись сферы в файл формата .csv
-void Sphere::WriteInCSV(string a)
-{
-	ofstream File;
-	ifstream check("File.csv");
-	if (!check.is_open())
-	{
-		File.open("File.csv");
-		File << "Number;Type;Id;X;Y;Z" << endl;
-		File.close();
-	}
-	File.open("File.csv", ios_base::app);
-	File << a;
-	File.close();
-}
-
-// Запись поверхности в файл формата .csv
-void Plane::WriteInCSV(string a)
-{
-	ofstream File;
-	ifstream check("File.csv");
-	if (!check.is_open())
-	{
-		File.open("File.csv");
-		File << "Number;Type;Id;X;Y;Z" << endl;
-		File.close();
-	}
-	File.open("File.csv", ios_base::app);
-	File << a;
-	File.close();
 }
 
 // Возвращает цилиндр в виде строки под формат .csv
@@ -275,15 +178,6 @@ string Cylinder::GetAsJSON()
 	str += "]\n";
 	str += "},\n";
 	return str;
-}
-
-// Запись цилиндра в файл формата .csv
-void Cylinder::WriteInJSON(string a)
-{
-	a += "}";
-	a.erase(a.rfind(","), 1);
-	ofstream JSON("JSON.json");
-	JSON << setw(4) << a << endl;
 }
 
 // Возвращает сферу в виде строки под формат .csv
@@ -447,6 +341,35 @@ void Cylinder::CreateFooting(double r, double h)
 	}
 }
 
+// Функция генерации основания и вершины цилиндра с нормальным распределением точек
+void Cylinder::CreateFooting(double r, double h, double o)
+{
+	Point dot;
+	// x = r*cos(fi), y = r * sin(fi)
+	double hlp_r = r;
+	for (r; r > 0; r -= 2)  // изменение радиуса круга для заполнения основания
+	{
+		for (int i = 0; i <= 360; i += 5)
+		{
+			dot.x = GetNormDistNumb(r * cos(i),o);
+			dot.y = GetNormDistNumb(0, o);;
+			dot.z = GetNormDistNumb(r * sin(i), o);
+			p.push_back(dot);
+		}
+	}
+	for (hlp_r; hlp_r > 0; hlp_r -= 2)  // изменение радиуса круга для заполнения вершины
+	{
+		for (int i = 0; i <= 360; i += 5)
+		{
+			dot.x = GetNormDistNumb(hlp_r * cos(i),o);
+			dot.y = GetNormDistNumb(h, o);
+			dot.z = GetNormDistNumb(hlp_r * sin(i), o);
+			p.push_back(dot);
+
+		}
+	}
+}
+
 // Функция генерации стенок цилиндра
 void Cylinder::CreateWalls(double r, double h)
 {
@@ -462,6 +385,26 @@ void Cylinder::CreateWalls(double r, double h)
 			dot.x = r * cos(i);
 			dot.y = hlp_y;
 			dot.z = r * sin(i);
+			p.push_back(dot);
+		}
+	}
+}
+
+// Функция генерации стенок цилиндра с нормальным распределением точек
+void Cylinder::CreateWalls(double r, double h, double o)
+{
+	Point dot;
+	double hlp_y = 0;
+	double k = 0;
+	while (hlp_y < h)
+	{
+		k = GetRandRealNumb(2, 4);
+		hlp_y += k;
+		for (int i = 0; i <= 360; i += 5)
+		{
+			dot.x = GetNormDistNumb(r * cos(i), o);
+			dot.y = GetNormDistNumb(hlp_y, o);
+			dot.z = GetNormDistNumb(r * sin(i), o);
 			p.push_back(dot);
 		}
 	}

@@ -19,8 +19,6 @@ class Figure {
 		json j;
 		vector <Point> p;
 		vector <vector <Point>> f;
-		virtual void WriteInCSV(string a);
-		virtual void WriteInJSON(string a);
 		virtual string GetAsCSV();
 		virtual string GetAsJSON();
 		size_t& NumberInCSV() { static size_t c = 0; return c; }
@@ -35,10 +33,11 @@ class Cylinder: public Figure {
 		double r, h;
 		Cylinder();
 		Cylinder(double r, double h);
+		Cylinder(double o);
 		void CreateFooting(double r, double h);
 		void CreateWalls(double r, double h);
-		void WriteInCSV(string a) override;
-		void WriteInJSON(string a) override;
+		void CreateFooting(double r, double h, double o);
+		void CreateWalls(double r, double h, double o);
 		string GetAsCSV() override;
 		string GetAsJSON() override;
 private:
@@ -55,8 +54,6 @@ class Plane: public Figure {
 		Plane(int Num_Points);
 		string GetAsCSV() override;
 		string GetAsJSON() override;
-		void WriteInCSV(string a) override;
-		void WriteInJSON(string a) override;
 private:
 	size_t& ID() { static size_t c = 0; return c; }
 };
@@ -72,8 +69,6 @@ class Sphere: public Figure {
 		void CreateDownHemisphere(double r);
 		string GetAsCSV() override;
 		string GetAsJSON() override;
-		void WriteInCSV(string a) override;
-		void WriteInJSON(string a) override;
 private:
 	size_t& ID() { static size_t c = 0; return c; }
 };

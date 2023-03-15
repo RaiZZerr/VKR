@@ -3,6 +3,7 @@
 #include <ctime>
 #include <random>
 #include "Classes.h"
+#include "WriteInFile.cpp"
 
 using namespace std;
 
@@ -10,21 +11,10 @@ int main()
 {
 	string json;
 	string csv;
-	Figure* f = new Cylinder();
-	csv = f->GetAsCSV();
-	json = f->GetAsJSON();
-	delete f;
-	Figure* g = new Plane();
-	csv += g->GetAsCSV();
-	json += g->GetAsJSON();
-	Figure* S = new Sphere();
-	csv += S->GetAsCSV();
-	json += S->GetAsJSON();
-	delete S;
-	Figure* T = new Cylinder();
+	Figure* T = new Cylinder(1.5);
 	csv += T->GetAsCSV();
 	json += T->GetAsJSON();
-	T->WriteInCSV(csv);
-	T->WriteInJSON(json);
+	WriteInCSV(csv);
+	WriteInJSON(json);
 	return 0;
 }
