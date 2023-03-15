@@ -16,5 +16,6 @@ int main()
 	json += T->GetAsJSON();
 	WriteInCSV(csv);
 	WriteInJSON(json);
+	delete T;
 	return 0;
 }
