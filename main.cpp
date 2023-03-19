@@ -1,9 +1,7 @@
 ﻿
 #include <iostream>
-#include <ctime>
-#include <random>
-#include "Classes.h"
-#include "WriteInFile.cpp"
+#include "figures.h"
+#include "writefile.h"
 
 using namespace std;
 

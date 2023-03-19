@@ -1,7 +1,7 @@
 
 #define _USE_MATH_DEFINES
-#include "Classes.h"
-#include "Randomization.cpp"
+#include "figures.h"
+#include "randomization.h"
 #include <string>
 #include <cmath>
 

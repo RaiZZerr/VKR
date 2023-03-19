@@ -140,13 +140,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Functions.cpp" />
-    <ClCompile Include="Randomization.cpp" />
-    <ClCompile Include="VKR.cpp" />
-    <ClCompile Include="WriteInFile.cpp" />
+    <ClCompile Include="figures.cpp" />
+    <ClCompile Include="randomization.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="writefile.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Classes.h" />
+    <ClInclude Include="figures.h" />
+    <ClInclude Include="randomization.h" />
+    <ClInclude Include="writefile.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

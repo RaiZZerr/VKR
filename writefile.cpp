@@ -1,12 +1,11 @@
  
 #include <fstream>
 #include <nlohmann/json.hpp>
+#include "writefile.h"
 
 using namespace std;
 
-inline void WriteInCSV(string a);
-inline void WriteInJSON(string a);
-
+// Функция записи в файл формата .csv
 void WriteInCSV(string a)
 {
 	ofstream File;
@@ -22,6 +21,7 @@ void WriteInCSV(string a)
 	File.close();
 }
 
+// Функция записи в файл формата .json
 void WriteInJSON(string a)
 {
 	a += "}";
