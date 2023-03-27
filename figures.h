@@ -2,10 +2,8 @@
 #include <vector>
 #include <random>
 #include <fstream>
-#include <nlohmann/json.hpp>
 
 using namespace std;
-using nlohmann::json;
 
 // Класс описания точки
 class Point {
@@ -16,11 +14,11 @@ class Point {
 // Класс, описывающий любую фигуру
 class Figure {
 	public:
-		json j;
-		vector <Point> p;
-		vector <vector <Point>> f;
-		virtual string GetAsCSV();
-		virtual string GetAsJSON();
+		//vector <Point> p;
+		//vector <vector <Point>> f;
+		virtual string GetAsCSV(vector <vector <Point>> f);
+		virtual string GetAsJSON(vector <vector <Point>> f);
+		virtual vector <Point> GetAsPoints(double o);
 		size_t& NumberInCSV() { static size_t c = 0; return c; }
 		size_t& NumberInJSON() { static size_t c = 0; return c; }
 private:
@@ -31,15 +29,14 @@ private:
 class Cylinder: public Figure {
 	public:
 		double r, h;
-		Cylinder();
 		Cylinder(double r, double h);
-		Cylinder(double o);
-		void CreateFooting(double r, double h);
-		void CreateWalls(double r, double h);
-		void CreateFooting(double r, double h, double o);
-		void CreateWalls(double r, double h, double o);
-		string GetAsCSV() override;
-		string GetAsJSON() override;
+		vector <Point> GetAsPoints(double o) override;
+		vector <Point> CreateFooting(double r, double h);
+		vector <Point> CreateWalls(double r, double h);
+		vector <Point> CreateFooting(double r, double h, double o);
+		vector <Point> CreateWalls(double r, double h, double o);
+		string GetAsCSV(vector <vector <Point>> f) override;
+		string GetAsJSON(vector <vector <Point>> f) override;
 private:
 	size_t& ID() { static size_t c = 0; return c; }
 	
@@ -52,8 +49,8 @@ class Plane: public Figure {
 		double angle;
 		Plane();
 		Plane(int Num_Points);
-		string GetAsCSV() override;
-		string GetAsJSON() override;
+		/*string GetAsCSV() override;
+		string GetAsJSON() override;*/
 private:
 	size_t& ID() { static size_t c = 0; return c; }
 };
@@ -67,8 +64,8 @@ class Sphere: public Figure {
 		void CreateFooting(double r);
 		void CreateUpHemisphere(double r);
 		void CreateDownHemisphere(double r);
-		string GetAsCSV() override;
-		string GetAsJSON() override;
+		//string GetAsCSV() override;
+		//string GetAsJSON() override;
 private:
 	size_t& ID() { static size_t c = 0; return c; }
 };

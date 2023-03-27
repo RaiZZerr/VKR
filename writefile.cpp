@@ -13,7 +13,7 @@ void WriteInCSV(string a)
 	if (!check.is_open())
 	{
 		File.open("File.csv");
-		File << "Number;Type;Id;X;Y;Z" << endl;
+		File << "Number;Type;X;Y;Z" << endl;
 		File.close();
 	}
 	File.open("File.csv", ios_base::app);
