@@ -37,9 +37,6 @@ class Cylinder: public Figure {
 		vector <Point> CreateWalls(double r, double h, double o);
 		string GetAsCSV(vector <vector <Point>> f) override;
 		string GetAsJSON(vector <vector <Point>> f) override;
-private:
-	size_t& ID() { static size_t c = 0; return c; }
-	
 };
 
 // Класс, описывающий поверхность

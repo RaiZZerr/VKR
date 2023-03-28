@@ -65,7 +65,6 @@ Cylinder::Cylinder(double radius, double height)
 
 	// Генерация стенок цилиндра
 	CreateWalls(r, h);
-	++ID();
 }
 
 vector <Point> Cylinder::GetAsPoints(double o)
