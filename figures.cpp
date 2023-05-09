@@ -5,41 +5,61 @@
 #include <string>
 #include <cmath>
 
-// Конструктор поверхности с рандомным кол-вом точек (от 50 до 10000)
-Plane::Plane()
+// Конструктор поверхности с заданным кол-вом точек (Count)
+Plane::Plane(int Count)
 {
-	//Point dot;
-	//Num_Points = GetRandIntNumb(50, 10000);
-	//angle = GetRandRealNumb(0, 360);
-	//double a = cos(angle * M_PI / 180.0);
-	//double b = sin(angle * M_PI / 180.0);              // Плоскость задана уравнением ax + by + c = z
-	//for (int i = 0; i < Num_Points; i++) {
-	//	dot.x = GetRandRealNumb(-50, 50);
-	//	dot.y = GetRandRealNumb(-50, 50);
-	//	dot.z = -(a * dot.x + b * dot.y);
-	//	p.push_back(dot);
-	//}
-	//f.push_back(p);
-	//++ID();
+	Point_Count = Count;
 }
 
-// Конструктор поверхности с заданным кол-вом точек (Num_Points)
-Plane::Plane(int Num_Points)
+// Получение поверхности в виде точек
+vector <Point> Plane::GetAsPoints(double o)
 {
-	//Point dot;
-	//angle = GetRandRealNumb(0, 360);
-	//double a = cos(angle * M_PI / 180.0);
-	//double b = sin(angle * M_PI / 180.0);
-	//for (int i = 0; i < Num_Points; i++) {
-	//	dot.x = GetRandRealNumb(0, 1);
-	//	dot.y = GetRandRealNumb(0, 1);
-	//	dot.z = -(a * dot.x + b * dot.y);
-	//	p.push_back(dot);
-	//}
-	//f.push_back(p);
-	//++ID();
+	vector <Point> p;
+	Point dot;
+	angle = GetRandRealNumb(0, 360);
+	double a = cos(angle * M_PI / 180.0);
+	double b = sin(angle * M_PI / 180.0);
+	for (int i = 0; i < Point_Count; i++) 
+	{
+		dot.x = GetRandRealNumb(0, 1);
+		dot.y = GetRandRealNumb(0, 1);
+		dot.z = -(a * dot.x + b * dot.y);
+		p.push_back(dot);
+	}
+	return p;
 }
 
+// Возвращает поверхность в виде строки под формат .csv
+string Plane::GetAsCSV(vector <vector <Point>> f)
+{
+	string str;
+	for (int i = 0; i < f.size(); i++)
+	{
+		for (int j = 0; j < f[i].size(); j++)
+		{
+			str += to_string(i + 1) + ";" + "3" + ";" + to_string(f[i][j].x) + ";" + to_string(f[i][j].y) + ";" + to_string(f[i][j].z) + "\n";
+		}
+	}
+	return str;
+}
+
+string Plane::GetAsCSV(vector <Point> p)
+{
+	string str;
+	int num = NumberInCSV();
+	for (int i = 0; i < p.size(); i++)
+	{
+		str += to_string(num) + ";" + "3" + ";" + to_string(p[i].x) + ";" + to_string(p[i].y) + ";" + to_string(p[i].z) + "\n";
+	}
+	return str;
+}
+
+// Возвращает поверхность в виде строки под формат .json
+string Plane::GetAsJSON(vector <vector <Point>> f)
+{
+	string str;
+	return str;
+}
 // Конструткор рандомного цилиндра
 //Cylinder::Cylinder()
 //{
@@ -60,14 +80,9 @@ Cylinder::Cylinder(double radius, double height)
 {
 	r = radius;
 	h = height;
-	// Генерация основания и вершины цилиндра
-	CreateFooting(r, h);
-
-	// Генерация стенок цилиндра
-	CreateWalls(r, h);
-	++ID();
 }
 
+// Получение цилиндра в виде точек с нормальным распределением для каждой точки и средним отклонением o
 vector <Point> Cylinder::GetAsPoints(double o)
 {
 	vector <Point> p;
@@ -89,23 +104,9 @@ vector <Point> Cylinder::GetAsPoints(double o)
 	return p;
 }
 
-// Конструктор цилиндра с нормальным распределением для каждой точки с средним отклонением o
-//Cylinder::Cylinder(double o)
-//{
-//	h = GetRandRealNumb(5, 100);
-//	r = GetRandRealNumb(5, 100);
-//	// Генерация основания и вершины цилиндра
-//	CreateFooting(r, h, o);
-//
-//	// Генерация стенок цилиндра
-//	CreateWalls(r, h, o);
-//	f.push_back(p);
-//	++ID();
-//}
-
 // Конструктор рандомной сферы
-Sphere::Sphere()
-{
+//Sphere::Sphere()
+//{
 	
 	//r = GetRandRealNumb(5, 100);
 	//// Генерация образующей окружности сферы
@@ -119,11 +120,12 @@ Sphere::Sphere()
 
 	//f.push_back(p);
 	//++ID();
-}
+//}
 
 // Конструктор сферы с заданным радиусом
-Sphere::Sphere(double r)
+Sphere::Sphere(double radius)
 {
+	r = radius;
 	//// Генерация образующей окружности сферы
 	//CreateFooting(r);
 
@@ -141,13 +143,23 @@ Sphere::Sphere(double r)
 string Cylinder::GetAsCSV(vector <vector <Point>> f)
 {
 	string str;
-	++NumberInCSV();
 	for (int i = 0; i < f.size(); i++)
 	{
 		for (int j = 0; j < f[i].size(); j++)
 		{
 			str += to_string(i+1) + ";" + "1" + ";" + to_string(f[i][j].x) + ";" + to_string(f[i][j].y) + ";" + to_string(f[i][j].z) + "\n";
 		}	
+	}
+	return str;
+}
+
+string Cylinder::GetAsCSV(vector <Point> p)
+{
+	string str;
+	int num = NumberInCSV();
+	for (int i = 0; i < p.size(); i++)
+	{
+		str += to_string(num) + ";" + "1" + ";" + to_string(p[i].x) + ";" + to_string(p[i].y) + ";" + to_string(p[i].z) + "\n";
 	}
 	return str;
 }
@@ -268,19 +280,6 @@ string Cylinder::GetAsJSON(vector <vector <Point>> f)
 //	}
 //	str += "]\n";
 //	str += "},\n";
-//	return str;
-//}
-
-
-// Возвращает поверхность в виде строки под формат .csv
-//string Plane::GetAsCSV()
-//{
-//	string str;
-//	++NumberInCSV();
-//	for (int i = 0; i < p.size(); i++)
-//	{
-//		str += to_string(NumberInCSV()) + ";" + "3" + ";" + to_string(ID()) + ";" + to_string(p[i].x) + ";" + to_string(p[i].y) + ";" + to_string(p[i].z) + "\n";
-//	}
 //	return str;
 //}
 
@@ -443,66 +442,198 @@ vector <Point> Cylinder::CreateWalls(double r, double h, double o)
 	return p;
 }
 
-// Функция генерации окружности-основы сферы
-//void Sphere::CreateFooting(double r)
-//{
-//	Point dot;
-//	for (int i = 0; i <= 360; i += 2)
-//	{
-//		dot.x = r * cos(i);
-//		dot.y = 0;
-//		dot.z = r * sin(i);
-//		p.push_back(dot);
-//	}
-//}
+// Получение сферы в виде точек
+vector <Point> Sphere::GetAsPoints(double o)
+{
+	vector <Point> p;
+	vector <Point> hlp;
+	if (o == 0)
+	{
+		hlp = CreateFooting(r);
+		p.insert(p.end(), hlp.begin(), hlp.end());
+		hlp = CreateUpHemisphere(r);
+		p.insert(p.end(), hlp.begin(), hlp.end());
+		hlp = CreateDownHemisphere(r);
+		p.insert(p.end(), hlp.begin(), hlp.end());
+	}
+	else
+	{
+		hlp = CreateFooting(r, o);
+		p.insert(p.end(), hlp.begin(), hlp.end());
+		hlp = CreateUpHemisphere(r, o);
+		p.insert(p.end(), hlp.begin(), hlp.end());
+		hlp = CreateDownHemisphere(r, o);
+		p.insert(p.end(), hlp.begin(), hlp.end());
+	}
+	return p;
+}
 
-// Функция генерации верхней полусферы
-//void Sphere::CreateUpHemisphere(double r)
-//{
-//	Point dot;
-//	float hlp_y = 0;
-//	float hlp_r = 0;
-//	while (hlp_y < r)
-//	{
-//		if (hlp_y + 2 > r)
-//		{
-//			break;
-//		}
-//		hlp_y += GetRandRealNumb(2, 3);
-//		hlp_r = sqrt(r * r - hlp_y * hlp_y);
-//		for (int i = 0; i <= 360; i += GetRandRealNumb(1, 10))
-//		{
-//			dot.x = hlp_r * cos(i);
-//			dot.y = hlp_y;
-//			dot.z = hlp_r * sin(i);
-//			p.push_back(dot);
-//		}
-//	}
-//}
+// Функция генерации окружности-основы сферы
+vector <Point> Sphere::CreateFooting(double r)
+{
+	vector <Point> p;
+	Point dot;
+	for (int i = 0; i <= 360; i += 2)
+	{
+		dot.x = r * cos(i);
+		dot.y = 0;
+		dot.z = r * sin(i);
+		p.push_back(dot);
+	}
+	return p;
+}
+
+vector <Point> Sphere::CreateFooting(double r, double o)
+{
+	vector <Point> p;
+	Point dot;
+	for (int i = 0; i <= 360; i += 2)
+	{
+		dot.x = GetNormDistNumb(r * cos(i), o);
+		dot.y = GetNormDistNumb(0, o);
+		dot.z = GetNormDistNumb(r * sin(i), o);
+		p.push_back(dot);
+	}
+	return p;
+}
+
+//Функция генерации верхней полусферы
+vector <Point> Sphere::CreateUpHemisphere(double r)
+{
+	vector <Point> p;
+	Point dot;
+	float hlp_y = 0;
+	float hlp_r = 0;
+	while (hlp_y < r)
+	{
+		if (hlp_y + 2 > r)
+		{
+			break;
+		}
+		hlp_y += GetRandRealNumb(2, 3);
+		hlp_r = sqrt(r * r - hlp_y * hlp_y);
+		for (int i = 0; i <= 360; i += GetRandRealNumb(1, 10))
+		{
+			dot.x = hlp_r * cos(i);
+			dot.y = hlp_y;
+			dot.z = hlp_r * sin(i);
+			p.push_back(dot);
+		}
+	}
+	return p;
+}
+
+vector <Point> Sphere::CreateUpHemisphere(double r, double o)
+{
+	vector <Point> p;
+	Point dot;
+	float hlp_y = 0;
+	float hlp_r = 0;
+	while (hlp_y < r)
+	{
+		if (hlp_y + 2 > r)
+		{
+			break;
+		}
+		hlp_y += GetRandRealNumb(2, 3);
+		hlp_r = sqrt(r * r - hlp_y * hlp_y);
+		for (int i = 0; i <= 360; i += GetRandRealNumb(1, 10))
+		{
+			dot.x = GetNormDistNumb(hlp_r * cos(i), o);
+			dot.y = GetNormDistNumb(hlp_y, o);
+			dot.z = GetNormDistNumb(hlp_r * sin(i), o);
+			p.push_back(dot);
+		}
+	}
+	return p;
+}
 
 // Функция генерации нижней полусферы
-//void Sphere::CreateDownHemisphere(double r)
-//{
-//	Point dot;
-//	float hlp_y = 0;
-//	float hlp_r = 0;
-//	while ((-hlp_y) < r)
-//	{
-//		if (-(hlp_y - 2) > r)
-//		{
-//			break;
-//		}
-//		hlp_y -= GetRandRealNumb(2, 3);
-//		hlp_r = sqrt(r * r - ((-hlp_y) * (-hlp_y)));
-//		for (int i = 0; i <= 360; i += GetRandRealNumb(1, 10))
-//		{
-//			dot.x = hlp_r * cos(i);
-//			dot.y = hlp_y;
-//			dot.z = hlp_r * sin(i);
-//			p.push_back(dot);
-//		}
-//	}
-//}
+vector <Point> Sphere::CreateDownHemisphere(double r)
+{
+	vector <Point> p;
+	Point dot;
+	float hlp_y = 0;
+	float hlp_r = 0;
+	while ((-hlp_y) < r)
+	{
+		if (-(hlp_y - 2) > r)
+		{
+			break;
+		}
+		hlp_y -= GetRandRealNumb(2, 3);
+		hlp_r = sqrt(r * r - ((-hlp_y) * (-hlp_y)));
+		for (int i = 0; i <= 360; i += GetRandRealNumb(1, 10))
+		{
+			dot.x = hlp_r * cos(i);
+			dot.y = hlp_y;
+			dot.z = hlp_r * sin(i);
+			p.push_back(dot);
+		}
+	}
+	return p;
+}
+
+vector <Point> Sphere::CreateDownHemisphere(double r, double o)
+{
+	vector <Point> p;
+	Point dot;
+	float hlp_y = 0;
+	float hlp_r = 0;
+	while ((-hlp_y) < r)
+	{
+		if (-(hlp_y - 2) > r)
+		{
+			break;
+		}
+		hlp_y -= GetRandRealNumb(2, 3);
+		hlp_r = sqrt(r * r - ((-hlp_y) * (-hlp_y)));
+		for (int i = 0; i <= 360; i += GetRandRealNumb(1, 10))
+		{
+			dot.x = GetNormDistNumb(hlp_r * cos(i), o);
+			dot.y = GetNormDistNumb(hlp_y, o);
+			dot.z = GetNormDistNumb(hlp_r * sin(i), o);
+			p.push_back(dot);
+		}
+	}
+	return p;
+}
+
+string Sphere::GetAsCSV(vector <vector <Point>> f)
+{
+	string str;
+	for (int i = 0; i < f.size(); i++)
+	{
+		for (int j = 0; j < f[i].size(); j++)
+		{
+			str += to_string(i + 1) + ";" + "2" + ";" + to_string(f[i][j].x) + ";" + to_string(f[i][j].y) + ";" + to_string(f[i][j].z) + "\n";
+		}
+	}
+	return str;
+}
+
+string Sphere::GetAsCSV(vector <Point> p)
+{
+	string str;
+	int num = NumberInCSV();
+	for (int i = 0; i < p.size(); i++)
+	{
+		str += to_string(num) + ";" + "2" + ";" + to_string(p[i].x) + ";" + to_string(p[i].y) + ";" + to_string(p[i].z) + "\n";
+	}
+	return str;
+}
+
+string Sphere::GetAsJSON(vector <vector <Point>> f)
+{
+	string str;
+	return str;
+}
+
+string Figure::GetAsCSV(vector <Point> p)
+{
+	string str;
+	return str;
+}
 
 string Figure::GetAsCSV(vector <vector <Point>> f)
 {

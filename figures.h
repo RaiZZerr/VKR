@@ -17,57 +17,54 @@ class Figure {
 		//vector <Point> p;
 		//vector <vector <Point>> f;
 		virtual string GetAsCSV(vector <vector <Point>> f);
+		virtual string GetAsCSV(vector <Point> p);
 		virtual string GetAsJSON(vector <vector <Point>> f);
 		virtual vector <Point> GetAsPoints(double o);
-		size_t& NumberInCSV() { static size_t c = 0; return c; }
-		size_t& NumberInJSON() { static size_t c = 0; return c; }
-private:
-	size_t& ID() { static size_t c = 0; return c; }
+		size_t& NumberInCSV() { static size_t c = 0; return ++c; }
 };
 
 // Класс, описывающий цилиндр
 class Cylinder: public Figure {
 	public:
 		double r, h;
-		Cylinder(double r, double h);
+		Cylinder(double radius, double height);
 		vector <Point> GetAsPoints(double o) override;
 		vector <Point> CreateFooting(double r, double h);
 		vector <Point> CreateWalls(double r, double h);
 		vector <Point> CreateFooting(double r, double h, double o);
 		vector <Point> CreateWalls(double r, double h, double o);
 		string GetAsCSV(vector <vector <Point>> f) override;
+		string GetAsCSV(vector <Point> p) override;
 		string GetAsJSON(vector <vector <Point>> f) override;
-private:
-	size_t& ID() { static size_t c = 0; return c; }
-	
 };
 
 // Класс, описывающий поверхность
 class Plane: public Figure {
 	public:
-		int Num_Points;
+		int Point_Count;
 		double angle;
-		Plane();
-		Plane(int Num_Points);
-		/*string GetAsCSV() override;
-		string GetAsJSON() override;*/
-private:
-	size_t& ID() { static size_t c = 0; return c; }
+		Plane(int Count);
+		vector <Point> GetAsPoints(double o) override;
+		string GetAsCSV(vector <vector <Point>> f) override;
+		string GetAsCSV(vector <Point> p) override;
+		string GetAsJSON(vector <vector <Point>> f) override;
 };
 
 // Класс, описывающий сферу
 class Sphere: public Figure {
 	public:
 		double r;
-		Sphere();
-		Sphere(double r);
-		void CreateFooting(double r);
-		void CreateUpHemisphere(double r);
-		void CreateDownHemisphere(double r);
-		//string GetAsCSV() override;
-		//string GetAsJSON() override;
-private:
-	size_t& ID() { static size_t c = 0; return c; }
+		Sphere(double radius);
+		vector <Point> GetAsPoints(double o) override;
+		vector <Point> CreateFooting(double r);
+		vector <Point> CreateUpHemisphere(double r);
+		vector <Point> CreateDownHemisphere(double r);
+		vector <Point> CreateFooting(double r, double o);
+		vector <Point> CreateUpHemisphere(double r, double o);
+		vector <Point> CreateDownHemisphere(double r, double o);
+		string GetAsCSV(vector <vector <Point>> f) override;
+		string GetAsCSV(vector <Point> p) override;
+		string GetAsJSON(vector <vector <Point>> f) override;
 };
 
 

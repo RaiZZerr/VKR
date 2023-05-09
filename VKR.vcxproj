@@ -140,12 +140,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="api.cpp" />
     <ClCompile Include="figures.cpp" />
     <ClCompile Include="randomization.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="writefile.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="api.h" />
     <ClInclude Include="figures.h" />
     <ClInclude Include="randomization.h" />
     <ClInclude Include="writefile.h" />
