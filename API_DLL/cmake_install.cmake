@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/RaiZZerr/source/repos/VKR
+# Install script for directory: C:/Users/RaiZZ/source/repos/RaiZZerr/VKR
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/RaiZZerr/source/repos/VKR/API_DLL/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/RaiZZ/source/repos/RaiZZerr/VKR/API_DLL/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

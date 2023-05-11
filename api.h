@@ -1,5 +1,10 @@
 
 enum class ShapeType {Cylinder, Sphere, Surface};
 
-void CreateSameTypesShapes(int Count, ShapeType Type); // Функкция генерации Count фигур типа Type
-void CreateRandTypesShapes(int Count); // Функция генерации Count фигур рандомного типа
+"@javadoc"
+void CreateShapes(int Count, ShapeType Type); // Функкция генерации Count фигур типа Type
+void CreateRandomShapes(int Count); // Функция генерации Count фигур рандомного типа
+
+// Добавить в параметры управление типом файла и именем файла.
+// Задокументировать все исключения
+// Добавить управление разбиением на точки

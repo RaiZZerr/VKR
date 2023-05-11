@@ -41,3 +41,6 @@ target_link_libraries(myAPI
 	PUBLIC
 		Static_lib
 )
+
+
+#  add_library(API SHARED api.cpp randomization.cpp writefile.cpp figures.cpp)

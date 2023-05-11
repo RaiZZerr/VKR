@@ -1,8 +1,8 @@
-C:/Users/RaiZZerr/source/repos/VKR/API_DLL/CMakeFiles/random.dir
-C:/Users/RaiZZerr/source/repos/VKR/API_DLL/CMakeFiles/writeinfile.dir
-C:/Users/RaiZZerr/source/repos/VKR/API_DLL/CMakeFiles/shapes.dir
-C:/Users/RaiZZerr/source/repos/VKR/API_DLL/CMakeFiles/API.dir
-C:/Users/RaiZZerr/source/repos/VKR/API_DLL/CMakeFiles/Static_lib.dir
-C:/Users/RaiZZerr/source/repos/VKR/API_DLL/CMakeFiles/myAPI.dir
-C:/Users/RaiZZerr/source/repos/VKR/API_DLL/CMakeFiles/ALL_BUILD.dir
-C:/Users/RaiZZerr/source/repos/VKR/API_DLL/CMakeFiles/ZERO_CHECK.dir
+C:/Users/RaiZZ/source/repos/RaiZZerr/VKR/API_DLL/CMakeFiles/random.dir
+C:/Users/RaiZZ/source/repos/RaiZZerr/VKR/API_DLL/CMakeFiles/writeinfile.dir
+C:/Users/RaiZZ/source/repos/RaiZZerr/VKR/API_DLL/CMakeFiles/shapes.dir
+C:/Users/RaiZZ/source/repos/RaiZZerr/VKR/API_DLL/CMakeFiles/API.dir
+C:/Users/RaiZZ/source/repos/RaiZZerr/VKR/API_DLL/CMakeFiles/Static_lib.dir
+C:/Users/RaiZZ/source/repos/RaiZZerr/VKR/API_DLL/CMakeFiles/myAPI.dir
+C:/Users/RaiZZ/source/repos/RaiZZerr/VKR/API_DLL/CMakeFiles/ALL_BUILD.dir
+C:/Users/RaiZZ/source/repos/RaiZZerr/VKR/API_DLL/CMakeFiles/ZERO_CHECK.dir

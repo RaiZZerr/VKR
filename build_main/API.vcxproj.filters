@@ -1,45 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\Users\RaiZZerr\source\repos\VKR\main.cpp">
+    <ClCompile Include="C:\Users\RaiZZ\source\repos\RaiZZerr\VKR\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\RaiZZerr\source\repos\VKR\figures.cpp">
+    <ClCompile Include="C:\Users\RaiZZ\source\repos\RaiZZerr\VKR\figures.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\RaiZZerr\source\repos\VKR\writefile.cpp">
+    <ClCompile Include="C:\Users\RaiZZ\source\repos\RaiZZerr\VKR\writefile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\RaiZZerr\source\repos\VKR\randomization.cpp">
+    <ClCompile Include="C:\Users\RaiZZ\source\repos\RaiZZerr\VKR\Randomization.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\RaiZZerr\source\repos\VKR\api.cpp">
+    <ClCompile Include="C:\Users\RaiZZ\source\repos\RaiZZerr\VKR\api.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\Users\RaiZZerr\source\repos\VKR\figures.h">
+    <ClInclude Include="C:\Users\RaiZZ\source\repos\RaiZZerr\VKR\figures.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\RaiZZerr\source\repos\VKR\writefile.h">
+    <ClInclude Include="C:\Users\RaiZZ\source\repos\RaiZZerr\VKR\writefile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\RaiZZerr\source\repos\VKR\randomization.h">
+    <ClInclude Include="C:\Users\RaiZZ\source\repos\RaiZZerr\VKR\randomization.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\RaiZZerr\source\repos\VKR\api.h">
+    <ClInclude Include="C:\Users\RaiZZ\source\repos\RaiZZerr\VKR\api.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\RaiZZerr\source\repos\VKR\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\RaiZZ\source\repos\RaiZZerr\VKR\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{DC284CA2-E3D5-3E90-8631-523D840A0532}</UniqueIdentifier>
+      <UniqueIdentifier>{A0896C3D-9A85-3BC3-8E4B-8E54FBD0164D}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{EC19FD29-892B-321E-A00C-3366CDC00F64}</UniqueIdentifier>
+      <UniqueIdentifier>{B73A5214-E270-3902-BBE6-8E3A1016F985}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

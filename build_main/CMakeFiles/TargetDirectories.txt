@@ -1,3 +1,3 @@
-C:/Users/RaiZZerr/source/repos/VKR/build_main/CMakeFiles/API.dir
-C:/Users/RaiZZerr/source/repos/VKR/build_main/CMakeFiles/ALL_BUILD.dir
-C:/Users/RaiZZerr/source/repos/VKR/build_main/CMakeFiles/ZERO_CHECK.dir
+C:/Users/RaiZZ/source/repos/RaiZZerr/VKR/build_main/CMakeFiles/API.dir
+C:/Users/RaiZZ/source/repos/RaiZZerr/VKR/build_main/CMakeFiles/ALL_BUILD.dir
+C:/Users/RaiZZ/source/repos/RaiZZerr/VKR/build_main/CMakeFiles/ZERO_CHECK.dir

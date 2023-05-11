@@ -7,7 +7,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeDetermineSystem.cmake:204 (message)"
       - "CMakeLists.txt:6 (project)"
     message: |
-      The system is: Windows - 10.0.22000 - AMD64
+      The system is: Windows - 10.0.19044 - AMD64
   -
     kind: "message-v1"
     backtrace:
@@ -23,36 +23,36 @@ events:
       
       The output was:
       0
-      Microsoft (R) Build Engine версии 17.1.0+ae57d105c для .NET Framework
+      Microsoft (R) Build Engine версии 17.0.0+c9eb9dd64 для .NET Framework
       (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
       
-      Сборка начата 11.05.2023 12:00:53.
-      Проект "C:\\Users\\RaiZZerr\\source\\repos\\VKR\\API_DLL\\CMakeFiles\\3.26.3\\CompilerIdC\\CompilerIdC.vcxproj" в узле 1 (целевые объекты по умолчанию).
+      Сборка начата 11.05.2023 13:38:26.
+      Проект "C:\\Users\\RaiZZ\\source\\repos\\RaiZZerr\\VKR\\API_DLL\\CMakeFiles\\3.26.3\\CompilerIdC\\CompilerIdC.vcxproj" в узле 1 (целевые объекты по умолчанию).
       PrepareForBuild:
         Создание каталога "Debug\\".
         Создание каталога "Debug\\CompilerIdC.tlog\\".
       InitializeBuildStatus:
         Создание "Debug\\CompilerIdC.tlog\\unsuccessfulbuild", так как было задано "AlwaysCreate".
       ClCompile:
-        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.31.31103\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TC /FC /errorReport:queue CMakeCCompilerId.c
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TC /FC /errorReport:queue CMakeCCompilerId.c
         CMakeCCompilerId.c
       Link:
-        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.31.31103\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X64 Debug\\CMakeCCompilerId.obj
-        CompilerIdC.vcxproj -> C:\\Users\\RaiZZerr\\source\\repos\\VKR\\API_DLL\\CMakeFiles\\3.26.3\\CompilerIdC\\CompilerIdC.exe
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X64 Debug\\CMakeCCompilerId.obj
+        CompilerIdC.vcxproj -> C:\\Users\\RaiZZ\\source\\repos\\RaiZZerr\\VKR\\API_DLL\\CMakeFiles\\3.26.3\\CompilerIdC\\CompilerIdC.exe
       PostBuildEvent:
         for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
         :VCEnd
-        CMAKE_C_COMPILER=C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.31.31103\\bin\\Hostx64\\x64\\cl.exe
+        CMAKE_C_COMPILER=C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\Hostx64\\x64\\cl.exe
       FinalizeBuildStatus:
         Файл "Debug\\CompilerIdC.tlog\\unsuccessfulbuild" удаляется.
         Обращение к "Debug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate".
-      Сборка проекта "C:\\Users\\RaiZZerr\\source\\repos\\VKR\\API_DLL\\CMakeFiles\\3.26.3\\CompilerIdC\\CompilerIdC.vcxproj" завершена (целевые объекты по умолчанию).
+      Сборка проекта "C:\\Users\\RaiZZ\\source\\repos\\RaiZZerr\\VKR\\API_DLL\\CMakeFiles\\3.26.3\\CompilerIdC\\CompilerIdC.vcxproj" завершена (целевые объекты по умолчанию).
       
       Сборка успешно завершена.
           Предупреждений: 0
           Ошибок: 0
       
-      Прошло времени 00:00:00.50
+      Прошло времени 00:00:03.33
       
       
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
@@ -60,7 +60,7 @@ events:
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
       
       The C compiler identification is MSVC, found in:
-        C:/Users/RaiZZerr/source/repos/VKR/API_DLL/CMakeFiles/3.26.3/CompilerIdC/CompilerIdC.exe
+        C:/Users/RaiZZ/source/repos/RaiZZerr/VKR/API_DLL/CMakeFiles/3.26.3/CompilerIdC/CompilerIdC.exe
       
   -
     kind: "message-v1"
@@ -77,36 +77,36 @@ events:
       
       The output was:
       0
-      Microsoft (R) Build Engine версии 17.1.0+ae57d105c для .NET Framework
+      Microsoft (R) Build Engine версии 17.0.0+c9eb9dd64 для .NET Framework
       (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
       
-      Сборка начата 11.05.2023 12:00:54.
-      Проект "C:\\Users\\RaiZZerr\\source\\repos\\VKR\\API_DLL\\CMakeFiles\\3.26.3\\CompilerIdCXX\\CompilerIdCXX.vcxproj" в узле 1 (целевые объекты по умолчанию).
+      Сборка начата 11.05.2023 13:38:31.
+      Проект "C:\\Users\\RaiZZ\\source\\repos\\RaiZZerr\\VKR\\API_DLL\\CMakeFiles\\3.26.3\\CompilerIdCXX\\CompilerIdCXX.vcxproj" в узле 1 (целевые объекты по умолчанию).
       PrepareForBuild:
         Создание каталога "Debug\\".
         Создание каталога "Debug\\CompilerIdCXX.tlog\\".
       InitializeBuildStatus:
         Создание "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild", так как было задано "AlwaysCreate".
       ClCompile:
-        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.31.31103\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TP /FC /errorReport:queue CMakeCXXCompilerId.cpp
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TP /FC /errorReport:queue CMakeCXXCompilerId.cpp
         CMakeCXXCompilerId.cpp
       Link:
-        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.31.31103\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdCXX.lib" /MACHINE:X64 Debug\\CMakeCXXCompilerId.obj
-        CompilerIdCXX.vcxproj -> C:\\Users\\RaiZZerr\\source\\repos\\VKR\\API_DLL\\CMakeFiles\\3.26.3\\CompilerIdCXX\\CompilerIdCXX.exe
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdCXX.lib" /MACHINE:X64 Debug\\CMakeCXXCompilerId.obj
+        CompilerIdCXX.vcxproj -> C:\\Users\\RaiZZ\\source\\repos\\RaiZZerr\\VKR\\API_DLL\\CMakeFiles\\3.26.3\\CompilerIdCXX\\CompilerIdCXX.exe
       PostBuildEvent:
         for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
         :VCEnd
-        CMAKE_CXX_COMPILER=C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.31.31103\\bin\\Hostx64\\x64\\cl.exe
+        CMAKE_CXX_COMPILER=C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\Hostx64\\x64\\cl.exe
       FinalizeBuildStatus:
         Файл "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild" удаляется.
         Обращение к "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.lastbuildstate".
-      Сборка проекта "C:\\Users\\RaiZZerr\\source\\repos\\VKR\\API_DLL\\CMakeFiles\\3.26.3\\CompilerIdCXX\\CompilerIdCXX.vcxproj" завершена (целевые объекты по умолчанию).
+      Сборка проекта "C:\\Users\\RaiZZ\\source\\repos\\RaiZZerr\\VKR\\API_DLL\\CMakeFiles\\3.26.3\\CompilerIdCXX\\CompilerIdCXX.vcxproj" завершена (целевые объекты по умолчанию).
       
       Сборка успешно завершена.
           Предупреждений: 0
           Ошибок: 0
       
-      Прошло времени 00:00:00.39
+      Прошло времени 00:00:01.64
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -114,7 +114,7 @@ events:
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
       
       The CXX compiler identification is MSVC, found in:
-        C:/Users/RaiZZerr/source/repos/VKR/API_DLL/CMakeFiles/3.26.3/CompilerIdCXX/CompilerIdCXX.exe
+        C:/Users/RaiZZ/source/repos/RaiZZerr/VKR/API_DLL/CMakeFiles/3.26.3/CompilerIdCXX/CompilerIdCXX.exe
       
   -
     kind: "try_compile-v1"
@@ -125,8 +125,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/RaiZZerr/source/repos/VKR/API_DLL/CMakeFiles/CMakeScratch/TryCompile-6rwrfx"
-      binary: "C:/Users/RaiZZerr/source/repos/VKR/API_DLL/CMakeFiles/CMakeScratch/TryCompile-6rwrfx"
+      source: "C:/Users/RaiZZ/source/repos/RaiZZerr/VKR/API_DLL/CMakeFiles/CMakeScratch/TryCompile-ovucme"
+      binary: "C:/Users/RaiZZ/source/repos/RaiZZerr/VKR/API_DLL/CMakeFiles/CMakeScratch/TryCompile-ovucme"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
       CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
@@ -134,38 +134,38 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: C:/Users/RaiZZerr/source/repos/VKR/API_DLL/CMakeFiles/CMakeScratch/TryCompile-6rwrfx
+        Change Dir: C:/Users/RaiZZ/source/repos/RaiZZerr/VKR/API_DLL/CMakeFiles/CMakeScratch/TryCompile-ovucme
         
-        Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_96c2c.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n && Microsoft (R) Build Engine версии 17.1.0+ae57d105c для .NET Framework
+        Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_fe08e.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n && Microsoft (R) Build Engine версии 17.0.0+c9eb9dd64 для .NET Framework
         (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
         
-        Сборка начата 11.05.2023 12:00:54.
-        Проект "C:\\Users\\RaiZZerr\\source\\repos\\VKR\\API_DLL\\CMakeFiles\\CMakeScratch\\TryCompile-6rwrfx\\cmTC_96c2c.vcxproj" в узле 1 (целевые объекты по умолчанию).
+        Сборка начата 11.05.2023 13:38:34.
+        Проект "C:\\Users\\RaiZZ\\source\\repos\\RaiZZerr\\VKR\\API_DLL\\CMakeFiles\\CMakeScratch\\TryCompile-ovucme\\cmTC_fe08e.vcxproj" в узле 1 (целевые объекты по умолчанию).
         PrepareForBuild:
-          Создание каталога "cmTC_96c2c.dir\\Debug\\".
-          Создание каталога "C:\\Users\\RaiZZerr\\source\\repos\\VKR\\API_DLL\\CMakeFiles\\CMakeScratch\\TryCompile-6rwrfx\\Debug\\".
-          Создание каталога "cmTC_96c2c.dir\\Debug\\cmTC_96c2c.tlog\\".
+          Создание каталога "cmTC_fe08e.dir\\Debug\\".
+          Создание каталога "C:\\Users\\RaiZZ\\source\\repos\\RaiZZerr\\VKR\\API_DLL\\CMakeFiles\\CMakeScratch\\TryCompile-ovucme\\Debug\\".
+          Создание каталога "cmTC_fe08e.dir\\Debug\\cmTC_fe08e.tlog\\".
         InitializeBuildStatus:
-          Создание "cmTC_96c2c.dir\\Debug\\cmTC_96c2c.tlog\\unsuccessfulbuild", так как было задано "AlwaysCreate".
+          Создание "cmTC_fe08e.dir\\Debug\\cmTC_fe08e.tlog\\unsuccessfulbuild", так как было задано "AlwaysCreate".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.31.31103\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_96c2c.dir\\Debug\\\\" /Fd"cmTC_96c2c.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.26\\Modules\\CMakeCCompilerABI.c"
-          Оптимизирующий компилятор Microsoft (R) C/C++ версии 19.31.31104 для x64
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_fe08e.dir\\Debug\\\\" /Fd"cmTC_fe08e.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.26\\Modules\\CMakeCCompilerABI.c"
+          Оптимизирующий компилятор Microsoft (R) C/C++ версии 19.30.30709 для x64
           CMakeCCompilerABI.c
           (C) Корпорация Майкрософт (Microsoft Corporation).  Все права защищены.
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_96c2c.dir\\Debug\\\\" /Fd"cmTC_96c2c.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.26\\Modules\\CMakeCCompilerABI.c"
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_fe08e.dir\\Debug\\\\" /Fd"cmTC_fe08e.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.26\\Modules\\CMakeCCompilerABI.c"
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.31.31103\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\RaiZZerr\\source\\repos\\VKR\\API_DLL\\CMakeFiles\\CMakeScratch\\TryCompile-6rwrfx\\Debug\\cmTC_96c2c.exe" /INCREMENTAL /ILK:"cmTC_96c2c.dir\\Debug\\cmTC_96c2c.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/RaiZZerr/source/repos/VKR/API_DLL/CMakeFiles/CMakeScratch/TryCompile-6rwrfx/Debug/cmTC_96c2c.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/RaiZZerr/source/repos/VKR/API_DLL/CMakeFiles/CMakeScratch/TryCompile-6rwrfx/Debug/cmTC_96c2c.lib" /MACHINE:X64  /machine:x64 cmTC_96c2c.dir\\Debug\\CMakeCCompilerABI.obj
-          cmTC_96c2c.vcxproj -> C:\\Users\\RaiZZerr\\source\\repos\\VKR\\API_DLL\\CMakeFiles\\CMakeScratch\\TryCompile-6rwrfx\\Debug\\cmTC_96c2c.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\RaiZZ\\source\\repos\\RaiZZerr\\VKR\\API_DLL\\CMakeFiles\\CMakeScratch\\TryCompile-ovucme\\Debug\\cmTC_fe08e.exe" /INCREMENTAL /ILK:"cmTC_fe08e.dir\\Debug\\cmTC_fe08e.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/RaiZZ/source/repos/RaiZZerr/VKR/API_DLL/CMakeFiles/CMakeScratch/TryCompile-ovucme/Debug/cmTC_fe08e.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/RaiZZ/source/repos/RaiZZerr/VKR/API_DLL/CMakeFiles/CMakeScratch/TryCompile-ovucme/Debug/cmTC_fe08e.lib" /MACHINE:X64 /pdbthreads:4  /machine:x64 cmTC_fe08e.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_fe08e.vcxproj -> C:\\Users\\RaiZZ\\source\\repos\\RaiZZerr\\VKR\\API_DLL\\CMakeFiles\\CMakeScratch\\TryCompile-ovucme\\Debug\\cmTC_fe08e.exe
         FinalizeBuildStatus:
-          Файл "cmTC_96c2c.dir\\Debug\\cmTC_96c2c.tlog\\unsuccessfulbuild" удаляется.
-          Обращение к "cmTC_96c2c.dir\\Debug\\cmTC_96c2c.tlog\\cmTC_96c2c.lastbuildstate".
-        Сборка проекта "C:\\Users\\RaiZZerr\\source\\repos\\VKR\\API_DLL\\CMakeFiles\\CMakeScratch\\TryCompile-6rwrfx\\cmTC_96c2c.vcxproj" завершена (целевые объекты по умолчанию).
+          Файл "cmTC_fe08e.dir\\Debug\\cmTC_fe08e.tlog\\unsuccessfulbuild" удаляется.
+          Обращение к "cmTC_fe08e.dir\\Debug\\cmTC_fe08e.tlog\\cmTC_fe08e.lastbuildstate".
+        Сборка проекта "C:\\Users\\RaiZZ\\source\\repos\\RaiZZerr\\VKR\\API_DLL\\CMakeFiles\\CMakeScratch\\TryCompile-ovucme\\cmTC_fe08e.vcxproj" завершена (целевые объекты по умолчанию).
         
         Сборка успешно завершена.
             Предупреждений: 0
             Ошибок: 0
         
-        Прошло времени 00:00:00.39
+        Прошло времени 00:00:01.63
         
       exitCode: 0
   -
@@ -177,8 +177,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/RaiZZerr/source/repos/VKR/API_DLL/CMakeFiles/CMakeScratch/TryCompile-x1ie9l"
-      binary: "C:/Users/RaiZZerr/source/repos/VKR/API_DLL/CMakeFiles/CMakeScratch/TryCompile-x1ie9l"
+      source: "C:/Users/RaiZZ/source/repos/RaiZZerr/VKR/API_DLL/CMakeFiles/CMakeScratch/TryCompile-ylvpht"
+      binary: "C:/Users/RaiZZ/source/repos/RaiZZerr/VKR/API_DLL/CMakeFiles/CMakeScratch/TryCompile-ylvpht"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
       CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
@@ -186,38 +186,38 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: C:/Users/RaiZZerr/source/repos/VKR/API_DLL/CMakeFiles/CMakeScratch/TryCompile-x1ie9l
+        Change Dir: C:/Users/RaiZZ/source/repos/RaiZZerr/VKR/API_DLL/CMakeFiles/CMakeScratch/TryCompile-ylvpht
         
-        Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_41d0b.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n && Microsoft (R) Build Engine версии 17.1.0+ae57d105c для .NET Framework
+        Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_e5ba8.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n && Microsoft (R) Build Engine версии 17.0.0+c9eb9dd64 для .NET Framework
         (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
         
-        Сборка начата 11.05.2023 12:00:55.
-        Проект "C:\\Users\\RaiZZerr\\source\\repos\\VKR\\API_DLL\\CMakeFiles\\CMakeScratch\\TryCompile-x1ie9l\\cmTC_41d0b.vcxproj" в узле 1 (целевые объекты по умолчанию).
+        Сборка начата 11.05.2023 13:38:37.
+        Проект "C:\\Users\\RaiZZ\\source\\repos\\RaiZZerr\\VKR\\API_DLL\\CMakeFiles\\CMakeScratch\\TryCompile-ylvpht\\cmTC_e5ba8.vcxproj" в узле 1 (целевые объекты по умолчанию).
         PrepareForBuild:
-          Создание каталога "cmTC_41d0b.dir\\Debug\\".
-          Создание каталога "C:\\Users\\RaiZZerr\\source\\repos\\VKR\\API_DLL\\CMakeFiles\\CMakeScratch\\TryCompile-x1ie9l\\Debug\\".
-          Создание каталога "cmTC_41d0b.dir\\Debug\\cmTC_41d0b.tlog\\".
+          Создание каталога "cmTC_e5ba8.dir\\Debug\\".
+          Создание каталога "C:\\Users\\RaiZZ\\source\\repos\\RaiZZerr\\VKR\\API_DLL\\CMakeFiles\\CMakeScratch\\TryCompile-ylvpht\\Debug\\".
+          Создание каталога "cmTC_e5ba8.dir\\Debug\\cmTC_e5ba8.tlog\\".
         InitializeBuildStatus:
-          Создание "cmTC_41d0b.dir\\Debug\\cmTC_41d0b.tlog\\unsuccessfulbuild", так как было задано "AlwaysCreate".
+          Создание "cmTC_e5ba8.dir\\Debug\\cmTC_e5ba8.tlog\\unsuccessfulbuild", так как было задано "AlwaysCreate".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.31.31103\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_41d0b.dir\\Debug\\\\" /Fd"cmTC_41d0b.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.26\\Modules\\CMakeCXXCompilerABI.cpp"
-          Оптимизирующий компилятор Microsoft (R) C/C++ версии 19.31.31104 для x64
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_e5ba8.dir\\Debug\\\\" /Fd"cmTC_e5ba8.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.26\\Modules\\CMakeCXXCompilerABI.cpp"
+          Оптимизирующий компилятор Microsoft (R) C/C++ версии 19.30.30709 для x64
           CMakeCXXCompilerABI.cpp
           (C) Корпорация Майкрософт (Microsoft Corporation).  Все права защищены.
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_41d0b.dir\\Debug\\\\" /Fd"cmTC_41d0b.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.26\\Modules\\CMakeCXXCompilerABI.cpp"
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_e5ba8.dir\\Debug\\\\" /Fd"cmTC_e5ba8.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.26\\Modules\\CMakeCXXCompilerABI.cpp"
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.31.31103\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\RaiZZerr\\source\\repos\\VKR\\API_DLL\\CMakeFiles\\CMakeScratch\\TryCompile-x1ie9l\\Debug\\cmTC_41d0b.exe" /INCREMENTAL /ILK:"cmTC_41d0b.dir\\Debug\\cmTC_41d0b.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/RaiZZerr/source/repos/VKR/API_DLL/CMakeFiles/CMakeScratch/TryCompile-x1ie9l/Debug/cmTC_41d0b.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/RaiZZerr/source/repos/VKR/API_DLL/CMakeFiles/CMakeScratch/TryCompile-x1ie9l/Debug/cmTC_41d0b.lib" /MACHINE:X64  /machine:x64 cmTC_41d0b.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_41d0b.vcxproj -> C:\\Users\\RaiZZerr\\source\\repos\\VKR\\API_DLL\\CMakeFiles\\CMakeScratch\\TryCompile-x1ie9l\\Debug\\cmTC_41d0b.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\RaiZZ\\source\\repos\\RaiZZerr\\VKR\\API_DLL\\CMakeFiles\\CMakeScratch\\TryCompile-ylvpht\\Debug\\cmTC_e5ba8.exe" /INCREMENTAL /ILK:"cmTC_e5ba8.dir\\Debug\\cmTC_e5ba8.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/RaiZZ/source/repos/RaiZZerr/VKR/API_DLL/CMakeFiles/CMakeScratch/TryCompile-ylvpht/Debug/cmTC_e5ba8.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/RaiZZ/source/repos/RaiZZerr/VKR/API_DLL/CMakeFiles/CMakeScratch/TryCompile-ylvpht/Debug/cmTC_e5ba8.lib" /MACHINE:X64 /pdbthreads:4  /machine:x64 cmTC_e5ba8.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_e5ba8.vcxproj -> C:\\Users\\RaiZZ\\source\\repos\\RaiZZerr\\VKR\\API_DLL\\CMakeFiles\\CMakeScratch\\TryCompile-ylvpht\\Debug\\cmTC_e5ba8.exe
         FinalizeBuildStatus:
-          Файл "cmTC_41d0b.dir\\Debug\\cmTC_41d0b.tlog\\unsuccessfulbuild" удаляется.
-          Обращение к "cmTC_41d0b.dir\\Debug\\cmTC_41d0b.tlog\\cmTC_41d0b.lastbuildstate".
-        Сборка проекта "C:\\Users\\RaiZZerr\\source\\repos\\VKR\\API_DLL\\CMakeFiles\\CMakeScratch\\TryCompile-x1ie9l\\cmTC_41d0b.vcxproj" завершена (целевые объекты по умолчанию).
+          Файл "cmTC_e5ba8.dir\\Debug\\cmTC_e5ba8.tlog\\unsuccessfulbuild" удаляется.
+          Обращение к "cmTC_e5ba8.dir\\Debug\\cmTC_e5ba8.tlog\\cmTC_e5ba8.lastbuildstate".
+        Сборка проекта "C:\\Users\\RaiZZ\\source\\repos\\RaiZZerr\\VKR\\API_DLL\\CMakeFiles\\CMakeScratch\\TryCompile-ylvpht\\cmTC_e5ba8.vcxproj" завершена (целевые объекты по умолчанию).
         
         Сборка успешно завершена.
             Предупреждений: 0
             Ошибок: 0
         
-        Прошло времени 00:00:00.38
+        Прошло времени 00:00:01.46
         
       exitCode: 0
 ...
