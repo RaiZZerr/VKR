@@ -1,0 +1,82 @@
+\hypertarget{api_8h}{}\doxysection{Файл C\+:/\+Users/\+Rai\+ZZerr/source/repos/\+VKR/api.h}
+\label{api_8h}\index{C:/Users/RaiZZerr/source/repos/VKR/api.h@{C:/Users/RaiZZerr/source/repos/VKR/api.h}}
+\doxysubsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structfunc_params}{func\+Params}}
+\begin{DoxyCompactList}\small\item\em Структура параметров функции Create\+Shapes. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfunc_params1}{func\+Params1}}
+\begin{DoxyCompactList}\small\item\em Структура параметров функции Create\+Random\+Shapes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Перечисления}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{api_8h_a5a4538eeab397888d88a4eefcc5a1345}{Shape\+Type}} \{ \mbox{\hyperlink{api_8h_a5a4538eeab397888d88a4eefcc5a1345a2ec2c2961c7ce5a114d969c1f562a563}{Cylinder}}
+, \mbox{\hyperlink{api_8h_a5a4538eeab397888d88a4eefcc5a1345ab7095f057db3fefa7325ad93a04e14fd}{Sphere}}
+, {\bfseries Plane}
+ \}
+\begin{DoxyCompactList}\small\item\em Набор возможных типов фигур \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{api_8h_a5c0db6daa306890bf558a2404fba15b1}{Create\+Shapes}} (const char file\+Name\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{structfunc_params}{func\+Params}} param)
+\item 
+void \mbox{\hyperlink{api_8h_a9a65998207c21108d6b7524a4a52da17}{Create\+Random\+Shapes}} (const char file\+Name\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{structfunc_params1}{func\+Params1}} param)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Перечисления}
+\mbox{\Hypertarget{api_8h_a5a4538eeab397888d88a4eefcc5a1345}\label{api_8h_a5a4538eeab397888d88a4eefcc5a1345}} 
+\index{api.h@{api.h}!ShapeType@{ShapeType}}
+\index{ShapeType@{ShapeType}!api.h@{api.h}}
+\doxysubsubsection{\texorpdfstring{ShapeType}{ShapeType}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{api_8h_a5a4538eeab397888d88a4eefcc5a1345}{Shape\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Набор возможных типов фигур 
+
+\begin{DoxyEnumFields}{Элементы перечислений}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Cylinder@{Cylinder}!api.h@{api.h}}\index{api.h@{api.h}!Cylinder@{Cylinder}}}\mbox{\Hypertarget{api_8h_a5a4538eeab397888d88a4eefcc5a1345a2ec2c2961c7ce5a114d969c1f562a563}\label{api_8h_a5a4538eeab397888d88a4eefcc5a1345a2ec2c2961c7ce5a114d969c1f562a563}} 
+Cylinder&Указывает, что тип фигуры -\/ цилиндр \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Sphere@{Sphere}!api.h@{api.h}}\index{api.h@{api.h}!Sphere@{Sphere}}}\mbox{\Hypertarget{api_8h_a5a4538eeab397888d88a4eefcc5a1345ab7095f057db3fefa7325ad93a04e14fd}\label{api_8h_a5a4538eeab397888d88a4eefcc5a1345ab7095f057db3fefa7325ad93a04e14fd}} 
+Sphere&Указывает, что тип фигуры -\/ сфера \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Функции}
+\mbox{\Hypertarget{api_8h_a9a65998207c21108d6b7524a4a52da17}\label{api_8h_a9a65998207c21108d6b7524a4a52da17}} 
+\index{api.h@{api.h}!CreateRandomShapes@{CreateRandomShapes}}
+\index{CreateRandomShapes@{CreateRandomShapes}!api.h@{api.h}}
+\doxysubsubsection{\texorpdfstring{CreateRandomShapes()}{CreateRandomShapes()}}
+{\footnotesize\ttfamily void Create\+Random\+Shapes (\begin{DoxyParamCaption}\item[{const char}]{file\+Name\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{structfunc_params1}{func\+Params1}}}]{param }\end{DoxyParamCaption})}
+
+Генерирует файл с именем \char`\"{}file\+Name\char`\"{} и расширением .csv или .json (взависимости от того,какое расширение указано в имени),содержащий фигуры рандомнго типа в количестве param.\+count и величиной стандартного отклонения param.\+partition для нормального распределения точек 
+\begin{DoxyParams}{Аргументы}
+{\em file\+Name} & Имя файла \\
+\hline
+{\em param} & Структура параметров функции Create\+Random\+Shapes (смотри описание \mbox{\hyperlink{structfunc_params1}{func\+Params1}}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Файл, содержащий сгенерированные данные требуемых фигур 
+\end{DoxyReturn}
+\mbox{\Hypertarget{api_8h_a5c0db6daa306890bf558a2404fba15b1}\label{api_8h_a5c0db6daa306890bf558a2404fba15b1}} 
+\index{api.h@{api.h}!CreateShapes@{CreateShapes}}
+\index{CreateShapes@{CreateShapes}!api.h@{api.h}}
+\doxysubsubsection{\texorpdfstring{CreateShapes()}{CreateShapes()}}
+{\footnotesize\ttfamily void Create\+Shapes (\begin{DoxyParamCaption}\item[{const char}]{file\+Name\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{structfunc_params}{func\+Params}}}]{param }\end{DoxyParamCaption})}
+
+Генерирует файл с именем \char`\"{}file\+Name\char`\"{} и расширением .csv или .json (взависимости от того,какое расширение указано в имени),содержащий фигуры типа param.\+type в количестве param.\+count и величиной стандартного отклонения param.\+partition для нормального распределения точек 
+\begin{DoxyParams}{Аргументы}
+{\em file\+Name} & Имя файла \\
+\hline
+{\em param} & Структура параметров функции Create\+Shapes (смотри описание \mbox{\hyperlink{structfunc_params}{func\+Params}}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Файл, содержащий сгенерированные данные требуемых фигур 
+\end{DoxyReturn}

@@ -1,0 +1,75 @@
+\hypertarget{figures_8h_source}{}\doxysection{C\+:/\+Users/\+Rai\+ZZerr/source/repos/\+VKR/figures.h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <random>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ Класс\ описания\ точки}}
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_point}{Point}}\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ x,\ y,\ z;}
+\DoxyCodeLine{00012\ \};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ Класс,\ описывающий\ любую\ фигуру}}
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_figure}{Figure}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_point}{Point}}\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{comment}{//vector\ <Point>\ p;}}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{comment}{//vector\ <vector\ <Point>>\ f;}}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{string}\ GetAsCSV(vector\ <vector\ <Point>>\ f);}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{string}\ GetAsCSV(vector\ <Point>\ p);}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{string}\ GetAsJSON(vector\ <vector\ <Point>>\ f);}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ vector\ <Point>\ GetAsPoints(\textcolor{keywordtype}{double}\ o);}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\&\ NumberInCSV()\ \{\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{size\_t}\ c\ =\ 0;\ \textcolor{keywordflow}{return}\ ++c;\ \}}
+\DoxyCodeLine{00024\ \};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{comment}{//\ Класс,\ описывающий\ цилиндр}}
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_cylinder}{Cylinder}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_figure}{Figure}}\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ r,\ h;}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cylinder}{Cylinder}}(\textcolor{keywordtype}{double}\ radius,\ \textcolor{keywordtype}{double}\ height);}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ vector\ <Point>\ GetAsPoints(\textcolor{keywordtype}{double}\ o)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ vector\ <Point>\ CreateFooting(\textcolor{keywordtype}{double}\ r,\ \textcolor{keywordtype}{double}\ h);}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ vector\ <Point>\ CreateWalls(\textcolor{keywordtype}{double}\ r,\ \textcolor{keywordtype}{double}\ h);}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ vector\ <Point>\ CreateFooting(\textcolor{keywordtype}{double}\ r,\ \textcolor{keywordtype}{double}\ h,\ \textcolor{keywordtype}{double}\ o);}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ vector\ <Point>\ CreateWalls(\textcolor{keywordtype}{double}\ r,\ \textcolor{keywordtype}{double}\ h,\ \textcolor{keywordtype}{double}\ o);}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ GetAsCSV(vector\ <vector\ <Point>>\ f)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ GetAsCSV(vector\ <Point>\ p)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ GetAsJSON(vector\ <vector\ <Point>>\ f)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00039\ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{comment}{//\ Класс,\ описывающий\ поверхность}}
+\DoxyCodeLine{00042\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_plane}{Plane}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_figure}{Figure}}\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ Point\_Count;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ angle;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_plane}{Plane}}(\textcolor{keywordtype}{int}\ Count);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ vector\ <Point>\ GetAsPoints(\textcolor{keywordtype}{double}\ o)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ GetAsCSV(vector\ <vector\ <Point>>\ f)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ GetAsCSV(vector\ <Point>\ p)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ GetAsJSON(vector\ <vector\ <Point>>\ f)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00051\ \};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{comment}{//\ Класс,\ описывающий\ сферу}}
+\DoxyCodeLine{00054\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_sphere}{Sphere}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_figure}{Figure}}\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ r;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sphere}{Sphere}}(\textcolor{keywordtype}{double}\ radius);}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ vector\ <Point>\ GetAsPoints(\textcolor{keywordtype}{double}\ o)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ vector\ <Point>\ CreateFooting(\textcolor{keywordtype}{double}\ r);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ vector\ <Point>\ CreateUpHemisphere(\textcolor{keywordtype}{double}\ r);}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ vector\ <Point>\ CreateDownHemisphere(\textcolor{keywordtype}{double}\ r);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ vector\ <Point>\ CreateFooting(\textcolor{keywordtype}{double}\ r,\ \textcolor{keywordtype}{double}\ o);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ vector\ <Point>\ CreateUpHemisphere(\textcolor{keywordtype}{double}\ r,\ \textcolor{keywordtype}{double}\ o);}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ vector\ <Point>\ CreateDownHemisphere(\textcolor{keywordtype}{double}\ r,\ \textcolor{keywordtype}{double}\ o);}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ GetAsCSV(vector\ <vector\ <Point>>\ f)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ GetAsCSV(vector\ <Point>\ p)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ GetAsJSON(vector\ <vector\ <Point>>\ f)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00068\ \};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ }
+
+\end{DoxyCode}

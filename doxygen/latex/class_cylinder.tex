@@ -1,0 +1,122 @@
+\hypertarget{class_cylinder}{}\doxysection{Класс Cylinder}
+\label{class_cylinder}\index{Cylinder@{Cylinder}}
+Граф наследования\+:Cylinder\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_cylinder}
+\end{center}
+\end{figure}
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_cylinder_a3f5e8324bf064892b6f86108474d337c}\label{class_cylinder_a3f5e8324bf064892b6f86108474d337c}} 
+{\bfseries Cylinder} (double radius, double height)
+\item 
+vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ \mbox{\hyperlink{class_cylinder_a7f2d065d58128e1012c1c2c64f650805}{Get\+As\+Points}} (double o) override
+\item 
+\mbox{\Hypertarget{class_cylinder_a039a8a2c8a7d45cfa51dba004c8957dc}\label{class_cylinder_a039a8a2c8a7d45cfa51dba004c8957dc}} 
+vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ {\bfseries Create\+Footing} (double r, double h)
+\item 
+\mbox{\Hypertarget{class_cylinder_a7088d867b69f176b7f032196ddc9769d}\label{class_cylinder_a7088d867b69f176b7f032196ddc9769d}} 
+vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ {\bfseries Create\+Walls} (double r, double h)
+\item 
+\mbox{\Hypertarget{class_cylinder_aa8f058c3b9fe950802a48a7086418e82}\label{class_cylinder_aa8f058c3b9fe950802a48a7086418e82}} 
+vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ {\bfseries Create\+Footing} (double r, double h, double o)
+\item 
+\mbox{\Hypertarget{class_cylinder_acca24e8f6f8a8e52fa54c86f8c129fa1}\label{class_cylinder_acca24e8f6f8a8e52fa54c86f8c129fa1}} 
+vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ {\bfseries Create\+Walls} (double r, double h, double o)
+\item 
+string \mbox{\hyperlink{class_cylinder_ae0bffe15122958823686c7200207d98c}{Get\+As\+CSV}} (vector$<$ vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ $>$ f) override
+\item 
+string \mbox{\hyperlink{class_cylinder_ad28f61a98c630c508e11d7a50250fc1c}{Get\+As\+CSV}} (vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ p) override
+\item 
+string \mbox{\hyperlink{class_cylinder_a01617c9e8555e6dd3cd43c21bdbfc326}{Get\+As\+JSON}} (vector$<$ vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ $>$ f) override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Открытые члены унаследованные от \mbox{\hyperlink{class_figure}{Figure}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_figure_ac2029184bb3fd786fd70b32aa300c990}\label{class_figure_ac2029184bb3fd786fd70b32aa300c990}} 
+virtual string {\bfseries Get\+As\+CSV} (vector$<$ vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ $>$ f)
+\item 
+\mbox{\Hypertarget{class_figure_a71b0482a5aa7a016487e1ade157ffe6f}\label{class_figure_a71b0482a5aa7a016487e1ade157ffe6f}} 
+virtual string {\bfseries Get\+As\+CSV} (vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ p)
+\item 
+\mbox{\Hypertarget{class_figure_a3fc911864d61fb375af71537c78701e0}\label{class_figure_a3fc911864d61fb375af71537c78701e0}} 
+virtual string {\bfseries Get\+As\+JSON} (vector$<$ vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ $>$ f)
+\item 
+\mbox{\Hypertarget{class_figure_a81d3d9c95de8f9e2758145174c420997}\label{class_figure_a81d3d9c95de8f9e2758145174c420997}} 
+virtual vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ {\bfseries Get\+As\+Points} (double o)
+\item 
+\mbox{\Hypertarget{class_figure_a2261fe2fb86a85e7b83e9230b186dbd8}\label{class_figure_a2261fe2fb86a85e7b83e9230b186dbd8}} 
+size\+\_\+t \& {\bfseries Number\+In\+CSV} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_cylinder_a36efa9349e0a6d861560dbf69a4bfa03}\label{class_cylinder_a36efa9349e0a6d861560dbf69a4bfa03}} 
+double {\bfseries r}
+\item 
+\mbox{\Hypertarget{class_cylinder_a99f3dea8a167e4262ccacfa73ad684c4}\label{class_cylinder_a99f3dea8a167e4262ccacfa73ad684c4}} 
+double {\bfseries h}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Открытые атрибуты унаследованные от \mbox{\hyperlink{class_point}{Point}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_point_ab99c56589bc8ad5fa5071387110a5bc7}\label{class_point_ab99c56589bc8ad5fa5071387110a5bc7}} 
+double {\bfseries x}
+\item 
+\mbox{\Hypertarget{class_point_afa38be143ae800e6ad69ce8ed4df62d8}\label{class_point_afa38be143ae800e6ad69ce8ed4df62d8}} 
+double {\bfseries y}
+\item 
+\mbox{\Hypertarget{class_point_a05ba3b1dfcb19430582ae953cbbfbded}\label{class_point_a05ba3b1dfcb19430582ae953cbbfbded}} 
+double {\bfseries z}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{class_cylinder_ad28f61a98c630c508e11d7a50250fc1c}\label{class_cylinder_ad28f61a98c630c508e11d7a50250fc1c}} 
+\index{Cylinder@{Cylinder}!GetAsCSV@{GetAsCSV}}
+\index{GetAsCSV@{GetAsCSV}!Cylinder@{Cylinder}}
+\doxysubsubsection{\texorpdfstring{GetAsCSV()}{GetAsCSV()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily string Cylinder\+::\+Get\+As\+CSV (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Переопределяет метод предка \mbox{\hyperlink{class_figure}{Figure}}.
+
+\mbox{\Hypertarget{class_cylinder_ae0bffe15122958823686c7200207d98c}\label{class_cylinder_ae0bffe15122958823686c7200207d98c}} 
+\index{Cylinder@{Cylinder}!GetAsCSV@{GetAsCSV}}
+\index{GetAsCSV@{GetAsCSV}!Cylinder@{Cylinder}}
+\doxysubsubsection{\texorpdfstring{GetAsCSV()}{GetAsCSV()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily string Cylinder\+::\+Get\+As\+CSV (\begin{DoxyParamCaption}\item[{vector$<$ vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ $>$}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Переопределяет метод предка \mbox{\hyperlink{class_figure}{Figure}}.
+
+\mbox{\Hypertarget{class_cylinder_a01617c9e8555e6dd3cd43c21bdbfc326}\label{class_cylinder_a01617c9e8555e6dd3cd43c21bdbfc326}} 
+\index{Cylinder@{Cylinder}!GetAsJSON@{GetAsJSON}}
+\index{GetAsJSON@{GetAsJSON}!Cylinder@{Cylinder}}
+\doxysubsubsection{\texorpdfstring{GetAsJSON()}{GetAsJSON()}}
+{\footnotesize\ttfamily string Cylinder\+::\+Get\+As\+JSON (\begin{DoxyParamCaption}\item[{vector$<$ vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ $>$}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Переопределяет метод предка \mbox{\hyperlink{class_figure}{Figure}}.
+
+\mbox{\Hypertarget{class_cylinder_a7f2d065d58128e1012c1c2c64f650805}\label{class_cylinder_a7f2d065d58128e1012c1c2c64f650805}} 
+\index{Cylinder@{Cylinder}!GetAsPoints@{GetAsPoints}}
+\index{GetAsPoints@{GetAsPoints}!Cylinder@{Cylinder}}
+\doxysubsubsection{\texorpdfstring{GetAsPoints()}{GetAsPoints()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ Cylinder\+::\+Get\+As\+Points (\begin{DoxyParamCaption}\item[{double}]{o }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Переопределяет метод предка \mbox{\hyperlink{class_figure}{Figure}}.
+
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Rai\+ZZerr/source/repos/\+VKR/figures.\+h\item 
+C\+:/\+Users/\+Rai\+ZZerr/source/repos/\+VKR/figures.\+cpp\end{DoxyCompactItemize}

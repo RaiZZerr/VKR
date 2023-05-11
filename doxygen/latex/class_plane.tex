@@ -1,0 +1,110 @@
+\hypertarget{class_plane}{}\doxysection{Класс Plane}
+\label{class_plane}\index{Plane@{Plane}}
+Граф наследования\+:Plane\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_plane}
+\end{center}
+\end{figure}
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_plane_a1f43a1ff66f6fdecdd9022df6aaa22ac}\label{class_plane_a1f43a1ff66f6fdecdd9022df6aaa22ac}} 
+{\bfseries Plane} (int Count)
+\item 
+vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ \mbox{\hyperlink{class_plane_a87d1b2b1b9d11b55e829d8d66a828f34}{Get\+As\+Points}} (double o) override
+\item 
+string \mbox{\hyperlink{class_plane_ab40dcc9f2f0c78193f2e79a7be644f99}{Get\+As\+CSV}} (vector$<$ vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ $>$ f) override
+\item 
+string \mbox{\hyperlink{class_plane_a83e2e050ad93e8ac37bcdfef4874ecfe}{Get\+As\+CSV}} (vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ p) override
+\item 
+string \mbox{\hyperlink{class_plane_aeb6526316eedd92b5423f30f4e4c4428}{Get\+As\+JSON}} (vector$<$ vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ $>$ f) override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Открытые члены унаследованные от \mbox{\hyperlink{class_figure}{Figure}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_figure_ac2029184bb3fd786fd70b32aa300c990}\label{class_figure_ac2029184bb3fd786fd70b32aa300c990}} 
+virtual string {\bfseries Get\+As\+CSV} (vector$<$ vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ $>$ f)
+\item 
+\mbox{\Hypertarget{class_figure_a71b0482a5aa7a016487e1ade157ffe6f}\label{class_figure_a71b0482a5aa7a016487e1ade157ffe6f}} 
+virtual string {\bfseries Get\+As\+CSV} (vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ p)
+\item 
+\mbox{\Hypertarget{class_figure_a3fc911864d61fb375af71537c78701e0}\label{class_figure_a3fc911864d61fb375af71537c78701e0}} 
+virtual string {\bfseries Get\+As\+JSON} (vector$<$ vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ $>$ f)
+\item 
+\mbox{\Hypertarget{class_figure_a81d3d9c95de8f9e2758145174c420997}\label{class_figure_a81d3d9c95de8f9e2758145174c420997}} 
+virtual vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ {\bfseries Get\+As\+Points} (double o)
+\item 
+\mbox{\Hypertarget{class_figure_a2261fe2fb86a85e7b83e9230b186dbd8}\label{class_figure_a2261fe2fb86a85e7b83e9230b186dbd8}} 
+size\+\_\+t \& {\bfseries Number\+In\+CSV} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_plane_ad67edab0633d309ded1f7aaf2213f2f3}\label{class_plane_ad67edab0633d309ded1f7aaf2213f2f3}} 
+int {\bfseries Point\+\_\+\+Count}
+\item 
+\mbox{\Hypertarget{class_plane_ad598f700216a0754486b8e8c0c2984b8}\label{class_plane_ad598f700216a0754486b8e8c0c2984b8}} 
+double {\bfseries angle}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Открытые атрибуты унаследованные от \mbox{\hyperlink{class_point}{Point}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_point_ab99c56589bc8ad5fa5071387110a5bc7}\label{class_point_ab99c56589bc8ad5fa5071387110a5bc7}} 
+double {\bfseries x}
+\item 
+\mbox{\Hypertarget{class_point_afa38be143ae800e6ad69ce8ed4df62d8}\label{class_point_afa38be143ae800e6ad69ce8ed4df62d8}} 
+double {\bfseries y}
+\item 
+\mbox{\Hypertarget{class_point_a05ba3b1dfcb19430582ae953cbbfbded}\label{class_point_a05ba3b1dfcb19430582ae953cbbfbded}} 
+double {\bfseries z}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{class_plane_a83e2e050ad93e8ac37bcdfef4874ecfe}\label{class_plane_a83e2e050ad93e8ac37bcdfef4874ecfe}} 
+\index{Plane@{Plane}!GetAsCSV@{GetAsCSV}}
+\index{GetAsCSV@{GetAsCSV}!Plane@{Plane}}
+\doxysubsubsection{\texorpdfstring{GetAsCSV()}{GetAsCSV()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily string Plane\+::\+Get\+As\+CSV (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Переопределяет метод предка \mbox{\hyperlink{class_figure}{Figure}}.
+
+\mbox{\Hypertarget{class_plane_ab40dcc9f2f0c78193f2e79a7be644f99}\label{class_plane_ab40dcc9f2f0c78193f2e79a7be644f99}} 
+\index{Plane@{Plane}!GetAsCSV@{GetAsCSV}}
+\index{GetAsCSV@{GetAsCSV}!Plane@{Plane}}
+\doxysubsubsection{\texorpdfstring{GetAsCSV()}{GetAsCSV()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily string Plane\+::\+Get\+As\+CSV (\begin{DoxyParamCaption}\item[{vector$<$ vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ $>$}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Переопределяет метод предка \mbox{\hyperlink{class_figure}{Figure}}.
+
+\mbox{\Hypertarget{class_plane_aeb6526316eedd92b5423f30f4e4c4428}\label{class_plane_aeb6526316eedd92b5423f30f4e4c4428}} 
+\index{Plane@{Plane}!GetAsJSON@{GetAsJSON}}
+\index{GetAsJSON@{GetAsJSON}!Plane@{Plane}}
+\doxysubsubsection{\texorpdfstring{GetAsJSON()}{GetAsJSON()}}
+{\footnotesize\ttfamily string Plane\+::\+Get\+As\+JSON (\begin{DoxyParamCaption}\item[{vector$<$ vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ $>$}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Переопределяет метод предка \mbox{\hyperlink{class_figure}{Figure}}.
+
+\mbox{\Hypertarget{class_plane_a87d1b2b1b9d11b55e829d8d66a828f34}\label{class_plane_a87d1b2b1b9d11b55e829d8d66a828f34}} 
+\index{Plane@{Plane}!GetAsPoints@{GetAsPoints}}
+\index{GetAsPoints@{GetAsPoints}!Plane@{Plane}}
+\doxysubsubsection{\texorpdfstring{GetAsPoints()}{GetAsPoints()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ Plane\+::\+Get\+As\+Points (\begin{DoxyParamCaption}\item[{double}]{o }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Переопределяет метод предка \mbox{\hyperlink{class_figure}{Figure}}.
+
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Rai\+ZZerr/source/repos/\+VKR/figures.\+h\item 
+C\+:/\+Users/\+Rai\+ZZerr/source/repos/\+VKR/figures.\+cpp\end{DoxyCompactItemize}

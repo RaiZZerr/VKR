@@ -12,7 +12,7 @@ class Point {
 };
 
 // Класс, описывающий любую фигуру
-class Figure {
+class Figure: public Point {
 	public:
 		//vector <Point> p;
 		//vector <vector <Point>> f;
